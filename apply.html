@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apply for a role with EduTechies.">
+  <title>Apply | EduTechies</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .application-form { max-width: 900px; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="EduTechies home">
+        <span class="brand-mark" aria-hidden="true">ET</span>
+        <span class="brand-name">EduTechies</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Careers</a></li>
+          <li><a aria-current="page" href="apply.html">Apply</a></li>
+          <li><a href="about.html">About our team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <header class="page-intro">
+      <p class="eyebrow">Join the team</p>
+      <h1>Tell us a little about yourself.</h1>
+      <p>Complete the required fields and enter a valid reference from our <a href="jobs.html">current opportunities</a>. You can select any skills that apply.</p>
+    </header>
+
+    <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
+      <fieldset class="form-section">
+        <legend>Role and contact details</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="job-reference">Job reference number <span aria-hidden="true">*</span></label>
+            <input id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Enter exactly five letters or numbers." maxlength="5" autocomplete="off" required>
+            <small>Exactly five letters or numbers, for example ED105.</small>
+          </div>
+          <div class="form-field">
+            <label for="first-name">First name <span aria-hidden="true">*</span></label>
+            <input id="first-name" name="firstName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="given-name" required>
+          </div>
+          <div class="form-field">
+            <label for="last-name">Last name <span aria-hidden="true">*</span></label>
+            <input id="last-name" name="lastName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="family-name" required>
+          </div>
+          <div class="form-field">
+            <label for="date-of-birth">Date of birth <span aria-hidden="true">*</span></label>
+            <input id="date-of-birth" name="dateOfBirth" type="date" placeholder="dd/mm/yyyy" title="Enter a date in dd/mm/yyyy format." required>
+          </div>
+          <fieldset class="form-field gender-field">
+            <legend>Gender <span aria-hidden="true">*</span></legend>
+            <div class="choice-row">
+              <label><input type="radio" name="gender" value="female" required> Female</label>
+              <label><input type="radio" name="gender" value="male"> Male</label>
+              <label><input type="radio" name="gender" value="prefer-not-to-say"> Prefer not to say</label>
+            </div>
+          </fieldset>
+          <div class="form-field">
+            <label for="street-address">Street address <span aria-hidden="true">*</span></label>
+            <input id="street-address" name="streetAddress" type="text" maxlength="40" autocomplete="street-address" required>
+          </div>
+          <div class="form-field">
+            <label for="suburb">Suburb / town <span aria-hidden="true">*</span></label>
+            <input id="suburb" name="suburb" type="text" maxlength="40" autocomplete="address-level2" required>
+          </div>
+          <div class="form-field">
+            <label for="state">State or territory <span aria-hidden="true">*</span></label>
+            <select id="state" name="state" autocomplete="address-level1" required>
+              <option value="" selected disabled>Select a state or territory</option>
+              <option value="VIC">VIC</option><option value="NSW">NSW</option>
+              <option value="QLD">QLD</option><option value="NT">NT</option>
+              <option value="WA">WA</option><option value="SA">SA</option>
+              <option value="TAS">TAS</option><option value="ACT">ACT</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="postcode">Postcode <span aria-hidden="true">*</span></label>
+            <input id="postcode" name="postcode" type="text" inputmode="numeric" pattern="[0-9]{4}" title="Enter exactly four digits." maxlength="4" autocomplete="postal-code" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email address <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{8,12}" title="Enter 8 to 12 digits, with no spaces or symbols." maxlength="12" autocomplete="tel" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section skill-fieldset">
+        <legend>Skills and experience</legend>
+        <p class="field-hint">Select any skills that apply.</p>
+        <div class="choice-grid">
+          <label><input type="checkbox" name="skills" value="web-development"> Web development</label>
+          <label><input type="checkbox" name="skills" value="accessible-design"> Accessible design</label>
+          <label><input type="checkbox" name="skills" value="learning-design"> Learning design</label>
+          <label><input type="checkbox" name="skills" value="user-research"> User research</label>
+          <label><input type="checkbox" name="skills" value="content-writing"> Content writing</label>
+          <label><input type="checkbox" name="skills" value="project-management"> Project management</label>
+        </div>
+        <div class="form-field other-skills">
+          <label for="other-skills">Other skills or information (optional)</label>
+          <textarea id="other-skills" name="otherSkills" rows="5" placeholder="Share any other skills or relevant experience you'd like us to know about."></textarea>
+        </div>
+      </fieldset>
+      <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+      <button class="button button-primary submit-button" type="submit">Submit application</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">ET</span><span class="brand-name">EduTechies</span></a>
+        <p class="footer-tagline">Learning that opens doors.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Connect</h2>
+        <ul class="footer-links">
+          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog">Jira project</a></li>
+          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project">GitHub repository</a></li>
+          <li><a href="mailto:info@edutechies.com">info@edutechies.com</a></li>
+        </ul>
+      </div>
+      <p class="copyright">© 2026 EduTechies. Built for learning.</p>
+    </div>
+  </footer>
+</body>
+</html>
