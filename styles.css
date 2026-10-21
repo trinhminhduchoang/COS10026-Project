@@ -1,18 +1,3 @@
-:root {
-  --page-bg: #f5f9ff;
-  --surface: #ffffff;
-  --surface-alt: #edf5ff;
-  --navy: #0b2e6b;
-  --deep-blue: #123c90;
-  --primary: #1d5fd2;
-  --primary-soft: #dfeeff;
-  --accent: #7ec8ff;
-  --text: #1d2c45;
-  --muted: #51657f;
-  --border: #dceafc;
-  --footer: #0a2248;
-}
-
 /* shared.css: page defaults and accessibility */
 * {
   box-sizing: border-box;
@@ -20,8 +5,8 @@
 
 body {
   margin: 0;
-  color: var(--text);
-  background: var(--page-bg);
+  color: rgb(29, 44, 69);
+  background: rgb(245, 249, 255);
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
@@ -41,7 +26,7 @@ h2 {
 }
 
 a {
-  color: var(--primary);
+  color: rgb(29, 95, 210);
 }
 
 /* shared.css: visible keyboard focus for links and form controls */
@@ -50,7 +35,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #dc805a;
+  outline: 3px solid rgb(220, 128, 90);
   outline-offset: 3px;
 }
 
@@ -59,8 +44,8 @@ textarea:focus-visible {
   top: -50px;
   left: 10px;
   padding: 10px;
-  color: #fff;
-  background: var(--navy);
+  color: rgb(255, 255, 255);
+  background: rgb(11, 46, 107);
 }
 
 .skip-link:focus {
@@ -70,7 +55,7 @@ textarea:focus-visible {
 /* shared.css: header and navigation used across all pages */
 .site-header {
   border-bottom: 1px solid rgba(19, 60, 144, 0.15);
-  background: linear-gradient(90deg, var(--navy) 0%, var(--deep-blue) 100%);
+  background: linear-gradient(90deg, rgb(11, 46, 107) 0%, rgb(18, 60, 144) 100%);
 }
 
 .header-inner,
@@ -91,7 +76,7 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
 }
@@ -102,8 +87,8 @@ textarea:focus-visible {
   height: 40px;
   place-items: center;
   border-radius: 10px;
-  color: #fff;
-  background: linear-gradient(135deg, #1a78dc, #0d2d6a);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(26, 120, 220), rgb(13, 45, 106));
   box-shadow: 0 8px 18px rgba(13, 35, 95, 0.28);
 }
 
@@ -127,7 +112,7 @@ textarea:focus-visible {
 
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
-  color: #fff;
+  color: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -153,7 +138,7 @@ textarea:focus-visible {
 }
 
 .eyebrow {
-  color: var(--primary);
+  color: rgb(29, 95, 210);
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.1em;
@@ -166,8 +151,8 @@ textarea:focus-visible {
   padding: 11px 16px;
   border: 0;
   border-radius: 5px;
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary), var(--deep-blue));
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(29, 95, 210), rgb(18, 60, 144));
   font: inherit;
   font-weight: bold;
   text-align: center;
@@ -177,16 +162,16 @@ textarea:focus-visible {
 }
 
 .button:hover {
-  color: #fff;
-  background: linear-gradient(135deg, var(--deep-blue), var(--navy));
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--primary), var(--deep-blue));
+  background: linear-gradient(135deg, rgb(29, 95, 210), rgb(18, 60, 144));
 }
 
 .button-dark {
-  background: var(--navy);
+  background: rgb(11, 46, 107);
 }
 
 /* shared.css: tables and horizontal overflow wrapper */
@@ -210,12 +195,12 @@ caption {
 th,
 td {
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgb(220, 234, 252);
 }
 
 thead th {
-  color: #fff;
-  background: linear-gradient(135deg, var(--deep-blue), var(--navy));
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
 }
 
 tbody th {
@@ -225,8 +210,8 @@ tbody th {
 /* shared.css: acknowledgement panel */
 .country-note {
   padding: 50px 4%;
-  color: #fff;
-  background: linear-gradient(135deg, var(--navy), var(--deep-blue));
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(11, 46, 107), rgb(18, 60, 144));
 }
 
 .country-note-inner {
@@ -235,14 +220,14 @@ tbody th {
 }
 
 .country-note .eyebrow {
-  color: #d9eeff;
+  color: rgb(217, 238, 255);
 }
 
 /* shared.css: footer */
 .site-footer {
   padding: 35px 0;
-  color: #eaf2ef;
-  background: linear-gradient(180deg, var(--footer), #0d1737);
+  color: rgb(234, 242, 239);
+  background: linear-gradient(180deg, rgb(10, 34, 72), rgb(13, 23, 55));
 }
 
 .footer-inner {
@@ -251,12 +236,12 @@ tbody th {
 
 .footer-brand,
 .footer-links a {
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .footer-brand .brand-mark {
-  color: #fff;
-  background: linear-gradient(135deg, #4bb7ff, #1d5fd2);
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(75, 183, 255), rgb(29, 95, 210));
 }
 
 .footer-links {
@@ -266,7 +251,7 @@ tbody th {
 
 .footer-tagline,
 .copyright {
-  color: #bdccc7;
+  color: rgb(189, 204, 199);
   font-size: 0.9rem;
 }
 
@@ -286,11 +271,11 @@ tbody th {
 }
 
 .hero-copy p {
-  color: var(--muted);
+  color: rgb(81, 101, 127);
 }
 
 .hero-lede {
-  color: var(--navy) !important;
+  color: rgb(11, 46, 107) !important;
   font-size: 1.15rem;
   font-weight: bold;
 }
@@ -304,11 +289,11 @@ tbody th {
   place-items: center;
   overflow: hidden;
   border-radius: 18px;
-  background-color: var(--surface-alt);
+  background-color: rgb(237, 245, 255);
   background-image:
     radial-gradient(circle at 85% 20%, rgba(126, 200, 255, 0.35) 0 11%, transparent 11.2%),
     radial-gradient(circle at 12% 92%, rgba(126, 200, 255, 0.25) 0 16%, transparent 16.2%),
-    linear-gradient(135deg, #ecf6ff, #edf5ff 40%, #dfeeff);
+    linear-gradient(135deg, rgb(236, 246, 255), rgb(237, 245, 255) 40%, rgb(223, 238, 255));
   box-shadow: inset 0 0 0 1px rgba(18, 60, 144, 0.05);
 }
 
@@ -322,7 +307,7 @@ tbody th {
   position: absolute;
   right: 16px;
   bottom: 4px;
-  color: #39594b;
+  color: rgb(57, 89, 75);
   font-size: 0.85rem;
 }
 
@@ -331,7 +316,7 @@ tbody th {
 }
 
 .section-narrow {
-  background: var(--surface-alt);
+  background: rgb(237, 245, 255);
 }
 
 .section-heading {
@@ -347,27 +332,27 @@ tbody th {
 
 .value-card {
   padding: 22px;
-  border: 1px solid var(--border);
+  border: 1px solid rgb(220, 234, 252);
   border-radius: 10px;
-  background: var(--surface);
+  background: rgb(255, 255, 255);
   box-shadow: 0 8px 20px rgba(16, 42, 90, 0.04);
 }
 
 .value-number {
-  color: var(--primary);
+  color: rgb(29, 95, 210);
   font-weight: bold;
 }
 
 .roles-section {
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 .search-form {
   max-width: 700px;
   padding: 20px;
-  border: 1px solid var(--border);
+  border: 1px solid rgb(220, 234, 252);
   border-radius: 10px;
-  background: var(--surface-alt);
+  background: rgb(237, 245, 255);
 }
 
 .search-form label {
@@ -391,7 +376,7 @@ tbody th {
 }
 
 .purpose-table {
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 /* jobs.html: job listings */
@@ -404,7 +389,7 @@ tbody th {
   padding: 22px;
   border: 1px solid rgb(220, 229, 226);
   border-radius: 10px;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 .job-card-header {
@@ -437,7 +422,7 @@ tbody th {
 }
 
 .job-facts dt {
-  color: var(--primary);
+  color: rgb(29, 95, 210);
   font-weight: bold;
 }
 
@@ -461,9 +446,9 @@ tbody th {
   width: 25%;
   margin: 8px 0 18px 20px;
   padding: 16px;
-  border: 1px solid #cfe1ff;
-  border-left: 4px solid var(--primary);
-  background: var(--surface-alt);
+  border: 1px solid rgb(207, 225, 255);
+  border-left: 4px solid rgb(29, 95, 210);
+  background: rgb(237, 245, 255);
 }
 
 .job-card::after {
@@ -489,7 +474,7 @@ tbody th {
   padding: 22px;
   border: 1px solid rgb(220, 229, 226);
   border-radius: 10px;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 .form-section > legend {
@@ -520,7 +505,7 @@ select,
 textarea {
   max-width: 100%;
   padding: 10px;
-  border: 1px solid #b8c9c2;
+  border: 1px solid rgb(184, 201, 194);
   border-radius: 5px;
   font: inherit;
 }
@@ -567,7 +552,7 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
   width: auto;
-  accent-color: var(--primary);
+  accent-color: rgb(29, 95, 210);
 }
 
 .other-skills {
@@ -597,9 +582,9 @@ input[type="checkbox"] {
 .team-figure {
   margin: 0;
   padding: 22px;
-  border: 2px solid var(--primary);
+  border: 2px solid rgb(29, 95, 210);
   border-radius: 10px;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 .team-figure img {
@@ -640,27 +625,27 @@ input[type="checkbox"] {
 }
 
 .member-entry dd.student-id {
-  color: var(--primary);
+  color: rgb(29, 95, 210);
   font-size: 0.9rem;
   font-weight: bold;
 }
 
 .facts-table {
   min-width: 650px;
-  border: 2px solid var(--navy);
+  border: 2px solid rgb(11, 46, 107);
 }
 
 .facts-table thead {
-  color: #fff;
-  background: linear-gradient(135deg, var(--deep-blue), var(--navy));
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
 }
 
 .facts-table tbody tr:hover {
-  background: var(--surface-alt);
+  background: rgb(237, 245, 255);
 }
 
 .facts-table tbody tr:hover th {
-  background: #dfeeff;
+  background: rgb(223, 238, 255);
 }
 
 .member-photo {
@@ -670,7 +655,7 @@ input[type="checkbox"] {
   width: 100px;
   height: 100px;
   transform: translateX(-50%);
-  border: 4px solid #fff;
+  border: 4px solid rgb(255, 255, 255);
   border-radius: 50%;
   object-fit: cover;
 }
