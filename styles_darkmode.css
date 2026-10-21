@@ -16,7 +16,6 @@ html:has(#theme-checkbox:checked) .eyebrow,
 html:has(#theme-checkbox:checked) caption,
 html:has(#theme-checkbox:checked) .job-reference,
 html:has(#theme-checkbox:checked) .job-summary,
-html:has(#theme-checkbox:checked) .art-caption,
 html:has(#theme-checkbox:checked) figcaption {
   color: #f1f1f1 !important;
 }
@@ -39,6 +38,7 @@ html:has(#theme-checkbox:checked) .member-entry {
   color: #e0e0e0 !important;
 }
 
+html:has(#theme-checkbox:checked) .art-caption {color: black !important;}
 
 html:has(#theme-checkbox:checked) .team-figure {
   border-color: #2c3e50 !important;
