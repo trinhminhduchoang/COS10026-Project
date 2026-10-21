@@ -1,0 +1,38 @@
+.value-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover {
+  transform: translateY(-15px); 
+  box-shadow: 0px 15px 25px lightslategray;
+}
+
+.hero-art {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-art:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 25px rgb(176, 184, 210);
+}
+
+.button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 25px rgb(83, 109, 184);
+}
+
+.member-entry{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+}
+.member-entry:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 25px lightgrey;
+}
+
+
+body {
+    background-color: var(--surface);
+  background-image: 
+  linear-gradient(to right, rgba(29, 95, 210, 0.1) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(29, 95, 210, 0.1) 1px, transparent 1px);
+  background-size: 43px 43px; 
+  background-attachment: fixed;
+}
