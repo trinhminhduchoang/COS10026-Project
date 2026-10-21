@@ -1,5 +1,5 @@
 html:has(#theme-checkbox:checked) body {
-  background-color: #121212 !important;
+  background-color: #191818 !important;
   color: #e0e0e0 !important;
 }
 
@@ -33,7 +33,7 @@ html:has(#theme-checkbox:checked) .job-aside,
 html:has(#theme-checkbox:checked) .form-section,
 html:has(#theme-checkbox:checked) .team-figure,
 html:has(#theme-checkbox:checked) .member-entry {
-  background-color: #181818 !important;
+  background-color: #252424 !important;
   background-image: none !important;
   border-color: #2c2c2c !important;
   color: #e0e0e0 !important;
@@ -49,7 +49,7 @@ html:has(#theme-checkbox:checked) .team-figure {
 html:has(#theme-checkbox:checked) table,
 html:has(#theme-checkbox:checked) th,
 html:has(#theme-checkbox:checked) td {
-  background-color: #181818 !important;
+  background-color: #1e1d1d !important;
   border-color: #333333 !important;
   color: #e0e0e0 !important;
 }
