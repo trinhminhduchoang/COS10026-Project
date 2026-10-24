@@ -601,6 +601,7 @@ input[type="checkbox"] {
 
 .member-list {
   display: grid;
+  align-items: start;
   margin: 50px 0 0;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -609,14 +610,17 @@ input[type="checkbox"] {
 .member-entry {
   position: relative;
   padding: 22px;
-  padding-top: 62px;
+  padding-top: 52px;
   border: 1px solid rgb(220, 229, 226);
   border-radius: 10px;
   background: rgb(245, 248, 247);
+  background-color: rgb(228, 211, 188);
+
 }
 
 .member-entry dt {
   font-weight: bold;
+  text-align: center;
 }
 
 .member-entry dd {
@@ -650,6 +654,7 @@ input[type="checkbox"] {
 
 .member-photo {
   position: absolute;
+  z-index: 1;
   top: -50px;
   left: 50%;
   width: 100px;
