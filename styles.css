@@ -718,3 +718,9 @@ input[type="checkbox"] {
     width: 92%;
   }
 }
+
+.job-card{
+  border: 4px dotted #000000;
+    border-radius: 1rem;
+  /* border-image: linear-gradient(45deg, #023e8a, #90e0ef) 1; */
+}

@@ -55,6 +55,6 @@ body {
 }
 
 .job-card:hover{
-  transform: translateY(-5px);
-  box-shadow: 0px 15px 25px lightgray;
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 25px rgb(176, 184, 210);
 }
