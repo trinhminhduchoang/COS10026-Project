@@ -6,6 +6,8 @@
   <meta name="description" content="EduTechies creates accessible digital learning tools and platforms for education.">
   <title>EduTechies | Learning that opens doors</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_animation.css">
+  <link rel="stylesheet" href="styles_darkmode.css">
   <style>
     .hero-copy { max-width: 560px; }
   </style>
@@ -14,18 +16,22 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" >
-        <span class="brand-mark" >ET</span>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ET</span>
         <span class="brand-name">EduTechies</span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav">
         <ul>
-          <li><a aria-current="page" href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="jobs.html">Careers</a></li>
           <li><a href="apply.html">Apply</a></li>
           <li><a href="about.html">About our team</a></li>
         </ul>
       </nav>
+      <div class="theme-switch-wrapper"> 
+        <input type="checkbox" id="theme-checkbox" /> 
+        <label for="theme-checkbox" class="theme-switch" title="Theme Change">🌙</label> 
+      </div>
     </div>
   </header>
 

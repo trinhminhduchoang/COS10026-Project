@@ -1,0 +1,65 @@
+html:has(#theme-checkbox:checked) body {
+  background-color: #191818 !important;
+  color: #e0e0e0 !important;
+}
+
+html:has(#theme-checkbox:checked) h1,
+html:has(#theme-checkbox:checked) h2,
+html:has(#theme-checkbox:checked) h3,
+html:has(#theme-checkbox:checked) h4,
+html:has(#theme-checkbox:checked) p,
+html:has(#theme-checkbox:checked) li,
+html:has(#theme-checkbox:checked) a,
+html:has(#theme-checkbox:checked) dt,
+html:has(#theme-checkbox:checked) dd,
+html:has(#theme-checkbox:checked) .eyebrow,
+html:has(#theme-checkbox:checked) caption,
+html:has(#theme-checkbox:checked) .job-reference,
+html:has(#theme-checkbox:checked) .job-summary,
+html:has(#theme-checkbox:checked) figcaption {
+  color: #f1f1f1 !important;
+}
+
+html:has(#theme-checkbox:checked) .section,
+html:has(#theme-checkbox:checked) .section-narrow,
+html:has(#theme-checkbox:checked) .roles-section,
+html:has(#theme-checkbox:checked) .about-section,
+html:has(#theme-checkbox:checked) .value-card,
+html:has(#theme-checkbox:checked) .search-form,
+html:has(#theme-checkbox:checked) .job-card,
+html:has(#theme-checkbox:checked) .job-facts,
+html:has(#theme-checkbox:checked) .job-aside,
+html:has(#theme-checkbox:checked) .form-section,
+html:has(#theme-checkbox:checked) .team-figure,
+html:has(#theme-checkbox:checked) .member-entry {
+  background-color: #252424 !important;
+  background-image: none !important;
+  border-color: #2c2c2c !important;
+  color: #e0e0e0 !important;
+}
+
+html:has(#theme-checkbox:checked) .art-caption {color: black !important;}
+
+html:has(#theme-checkbox:checked) .team-figure {
+  border-color: #2c3e50 !important;
+  background-color: #1a2230 !important;
+}
+
+
+html:has(#theme-checkbox:checked) table,
+html:has(#theme-checkbox:checked) th,
+html:has(#theme-checkbox:checked) td {
+  background-color: #1e1d1d !important;
+  border-color: #333333 !important;
+  color: #e0e0e0 !important;
+}
+html:has(#theme-checkbox:checked) tbody th,
+html:has(#theme-checkbox:checked) thead th {
+  background-color: #222222 !important;
+  color: #f1f1f1 !important;
+}
+
+
+html:has(#theme-checkbox:checked) img {
+  filter: none !important;
+}
