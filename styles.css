@@ -128,7 +128,7 @@ textarea:focus-visible {
 }
 
 .page-intro {
-  max-width: 760px;
+  /* max-width: 760px; */
   margin-bottom: 35px;
 }
 

@@ -1,3 +1,59 @@
+/* Dark/Light mode switch button */
+#theme-checkbox {
+  display: none;
+}
+.theme-switch-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background-color: #2C4F91;
+  border: 2px solid #2C4F91;
+  border-radius: 20px;
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.theme-text {
+  font-size: 13px;
+  white-space: nowrap;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  left: 5px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition-duration: .2s;
+  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+  border: 5px solid white;
+}
+
+#theme-checkbox:checked+.theme-switch::after {
+  transform: translateX(100%);
+  transition-duration: .2s;
+  background-color: white;
+}
+
+
+#theme-checkbox:checked+.theme-switch {
+  background-color: #1A2230;
+  transition-duration: .2s;
+}
+
+/* Color related configs */
 html:has(#theme-checkbox:checked) body {
   background-color: #191818 !important;
   color: #e0e0e0 !important;
@@ -19,7 +75,6 @@ html:has(#theme-checkbox:checked) .job-summary,
 html:has(#theme-checkbox:checked) figcaption {
   color: #f1f1f1 !important;
 }
-
 html:has(#theme-checkbox:checked) .section,
 html:has(#theme-checkbox:checked) .section-narrow,
 html:has(#theme-checkbox:checked) .roles-section,
