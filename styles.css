@@ -492,18 +492,55 @@ tbody th {
 .form-field {
   min-width: 0;
   margin: 10px 0;
+  position: relative;
 }
 
-.form-field > label {
+.form-field input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
   display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
 }
 
-input,
-select,
-textarea {
-  max-width: 100%;
+.form-field .form-input:focus {
+  outline: none;
+}
+
+.form-field .form-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.form-field .form-label-char {
+  transition: 0.1s ease all;
+  transition-delay: calc(var(--index) * .03s);
+}
+
+.form-field .form-input:focus ~ label .form-label-char,
+.form-field .form-input:valid ~ label .form-label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #999;
+}
+
+.form-select {
+  background-color: #999;
+}
+
+select option {
+  background-color: #999;
+}
+
+input, select, textarea {  
   padding: 10px;
   border: 1px solid rgb(184, 201, 194);
   border-radius: 5px;
@@ -511,15 +548,29 @@ textarea {
 }
 
 .form-field input:not([type="radio"]):not([type="checkbox"]),
-.form-field select,
-.form-field textarea {
+.form-field select {
   width: 100%;
-  
 }
 
-.form-field small {
-  display: block;
-  color: rgb(83, 99, 109);
+.form-field input[type="date"] {
+  transition: ease 0.3s;
+}
+
+/* Hide the date format when the field is empty */
+.form-field input[type="date"]:not(:focus):not(:valid) {
+  color: transparent;
+}
+
+/* Show the date when the user clicks the field */
+.form-field input[type="date"]:focus,
+.form-field input[type="date"]:valid {
+  transition-delay: 0.4s;
+}
+
+.form-field .form-textarea {
+  resize: vertical;
+  width: 100%;
+  background-color: #999;
 }
 
 .gender-field {
