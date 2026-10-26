@@ -41,14 +41,14 @@
   border: 5px solid white;
 }
 
-#theme-checkbox:checked+.theme-switch::after {
+#theme-checkbox:checked + .theme-switch::after {
   transform: translateX(100%);
   transition-duration: .2s;
   background-color: white;
 }
 
 
-#theme-checkbox:checked+.theme-switch {
+#theme-checkbox:checked + .theme-switch {
   background-color: #1A2230;
   transition-duration: .2s;
 }

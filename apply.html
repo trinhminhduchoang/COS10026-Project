@@ -111,27 +111,33 @@
       <fieldset class="form-section skill-fieldset">
         <legend>Skills and experience</legend>
         <p class="field-hint">Select any skills that apply.</p>
-        <div class="choice-grid">
-          <label><input type="checkbox" name="skills" value="web-development"> Web development</label>
-          <label><input type="checkbox" name="skills" value="accessible-design"> Accessible design</label>
-          <label><input type="checkbox" name="skills" value="learning-design"> Learning design</label>
-          <label><input type="checkbox" name="skills" value="user-research"> User research</label>
-          <label><input type="checkbox" name="skills" value="content-writing"> Content writing</label>
-          <label><input type="checkbox" name="skills" value="project-management"> Project management</label>
+
+        <div class="skill-grid">
+          
+          <label for="web"><input type="checkbox" id="web" name="skills" value="web-development">Web Development</label>
+
+          <label for="access-des"><input type="checkbox" id="access-des" name="skills" value="accessible-design">Accessible Design</label>
+
+          <label for="learn-des"><input type="checkbox" id="learn-des" name="skills" value="learning-design">Learning Design</label>
+
+          <label for="user"><input type="checkbox" id="user" name="skills" value="user-research">User Research</label>
+
+          <label for="content"><input type="checkbox" id="content" name="skills" value="content-writing">Content writing</label>
+
+          <label for="project"><input type="checkbox" id="project" name="skills" value="project-management">Project Management</label>
+
         </div>
+
         <div class="form-field other-skills">
           <label for="other-skills">Other skills or information (optional)</label>
           <textarea id="other-skills" name="otherSkills" rows="5" placeholder="Share any other skills or relevant experience you'd like us to know about."></textarea>
-          <div class="form-field">
-    <label for="cv-upload">Please upload your CV here &#40;Image or PDF only&#41; </label>
-      
-    <input type="file" id="cv-upload" name="cv" accept=".pdf, image/*">
-    <span class="upload-text">Click Choose file to upload your CV!</span>
-      
-  </div>
+        </div>
+        <div class="form-field">
+          <label for="cv-upload">Please upload your CV here &#40;Image or PDF only&#41; </label>
+          <input type="file" id="cv-upload" name="cv" accept=".pdf, image/*" >
         </div>
       </fieldset>
-      <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+
       <button class="button button-primary submit-button" type="submit">Submit application</button>
     </form>
   </main>
