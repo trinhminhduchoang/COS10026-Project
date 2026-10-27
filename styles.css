@@ -321,7 +321,7 @@ tbody th {
 
 .section-heading {
   max-width: 680px;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
 .value-grid {
@@ -647,6 +647,7 @@ input[type="radio"]{
 /* about.html: team, member details, and fun-facts table */
 .about-section {
   margin: 45px 0;
+  padding: 22px;
 }
 
 .team-overview {
