@@ -29,6 +29,11 @@ a {
   color: rgb(29, 95, 210);
 }
 
+.main-nav ul {
+  flex-wrap: wrap;
+  padding: 0;
+}
+
 /* shared.css: visible keyboard focus for links and form controls */
 a:focus-visible,
 button:focus-visible,
@@ -324,21 +329,36 @@ tbody th {
   margin: 30px;
 }
 
-.value-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, 1fr);
+.purpose-list {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
 }
 
-.value-card {
-  padding: 22px;
-  border: 1px solid rgb(220, 234, 252);
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
+.purpose-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.purpose-card {
+  padding: 15px;
   box-shadow: 0 8px 20px rgba(16, 42, 90, 0.04);
+  background-color: white;
 }
 
-.value-number {
+.purpose-card-img {
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(16, 42, 90, 0.04);
+  background-color: white;
+  width: fit-content;
+}
+
+.purpose-img {
+  height: auto;
+  max-height: 400px;
+}
+
+.purpose-number {
   color: rgb(29, 95, 210);
   font-weight: bold;
 }
@@ -368,6 +388,7 @@ tbody th {
 
 .search-controls input {
   flex: 1;
+  outline: none;
 }
 
 .role-link {
@@ -752,11 +773,6 @@ input[type="radio"]{
     align-items: flex-start;
     flex-direction: column;
     padding: 16px 0;
-  }
-
-  .main-nav ul {
-    flex-wrap: wrap;
-    padding: 0;
   }
 
   .hero,

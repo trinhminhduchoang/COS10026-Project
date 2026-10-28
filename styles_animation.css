@@ -1,7 +1,16 @@
-.value-card {
+.purpose-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.value-card:hover {
+.purpose-card:hover {
+  transform: translateY(-15px); 
+  box-shadow: 0px 15px 25px lightslategray;
+}
+
+.purpose-card-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card-img:hover {
   transform: translateY(-15px); 
   box-shadow: 0px 15px 25px lightslategray;
 }
