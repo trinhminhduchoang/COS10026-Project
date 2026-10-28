@@ -100,13 +100,6 @@ html:has(#theme-checkbox:checked) .team-figure {
   background-color: #1a2230 !important;
 }
 
-html:has(#theme-checkbox:checked) .support-chat-window,
-html:has(#theme-checkbox:checked) .support-chat-message {
-  border-color: #2c2c2c !important;
-  background-color: #252424 !important;
-  color: #e0e0e0 !important;
-}
-
 
 html:has(#theme-checkbox:checked) table,
 html:has(#theme-checkbox:checked) th,

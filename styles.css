@@ -766,101 +766,6 @@ input[type="radio"]{
   object-fit: cover;
 }
 
-.support-chat {
-  position: fixed;
-  z-index: 10;
-  right: 24px;
-  bottom: 24px;
-}
-
-.support-chat > summary {
-  display: grid;
-  width: 60px;
-  height: 60px;
-  place-items: center;
-  border-radius: 50%;
-  color: rgb(255, 255, 255);
-  background: linear-gradient(135deg, rgb(29, 95, 210), rgb(18, 60, 144));
-  box-shadow: 0 8px 22px rgba(13, 35, 95, 0.3);
-  cursor: pointer;
-  list-style: none;
-}
-
-.support-chat > summary::-webkit-details-marker {
-  display: none;
-}
-
-.support-chat > summary:hover {
-  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
-}
-
-.support-chat > summary:focus-visible {
-  outline: 3px solid rgb(220, 128, 90);
-  outline-offset: 3px;
-}
-
-.support-chat-icon {
-  display: grid;
-  width: 30px;
-  height: 23px;
-  place-items: center;
-  border: 2px solid currentColor;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.support-chat-window {
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 14px);
-  width: min(350px, calc(100vw - 32px));
-  overflow: hidden;
-  border: 1px solid rgb(220, 234, 252);
-  border-radius: 12px;
-  background: rgb(255, 255, 255);
-  box-shadow: 0 12px 32px rgba(13, 35, 95, 0.2);
-}
-
-.support-chat-header {
-  padding: 18px 20px;
-  color: rgb(255, 255, 255);
-  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
-}
-
-.support-chat-header h2,
-.support-chat-header p {
-  margin: 0;
-  color: inherit;
-}
-
-.support-chat-header h2 {
-  font-size: 1.15rem;
-}
-
-.support-chat-message {
-  padding: 20px;
-}
-
-.support-chat-message p {
-  margin: 0 0 14px;
-}
-
-.support-chat-message a {
-  display: inline-block;
-  padding: 9px 14px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  background: rgb(18, 60, 144);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.support-chat-message a:hover {
-  background: rgb(11, 46, 107);
-}
-
 /* responsive.css: stack page layouts on narrow screens */
 @media (max-width: 700px) {
   .header-inner,
@@ -907,10 +812,5 @@ input[type="radio"]{
 
   .footer-inner {
     width: 92%;
-  }
-
-  .support-chat {
-    right: 16px;
-    bottom: 16px;
   }
 }
