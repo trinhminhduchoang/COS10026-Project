@@ -81,7 +81,7 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-.brand-mark {
+/* .brand-mark {
   display: grid;
   width: 40px;
   height: 40px;
@@ -90,7 +90,7 @@ textarea:focus-visible {
   color: rgb(255, 255, 255);
   background: linear-gradient(135deg, rgb(26, 120, 220), rgb(13, 45, 106));
   box-shadow: 0 8px 18px rgba(13, 35, 95, 0.28);
-}
+} */
 
 .main-nav ul,
 .footer-links {
@@ -239,10 +239,10 @@ tbody th {
   color: rgb(255, 255, 255);
 }
 
-.footer-brand .brand-mark {
+/* .footer-brand .brand-mark {
   color: rgb(255, 255, 255);
   background: linear-gradient(135deg, rgb(75, 183, 255), rgb(29, 95, 210));
-}
+} */
 
 .footer-links {
   flex-direction: column;
