@@ -391,6 +391,7 @@ tbody th {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  margin: 22px;
 }
 .purpose-card {
   padding: 15px;
