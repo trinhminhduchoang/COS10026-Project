@@ -43,7 +43,7 @@
 
 #theme-checkbox:checked + .theme-switch::after {
   transform: translateX(100%);
-  transition-duration: .2s;
+  transition-duration: .2s;e wo
   background-color: white;
 }
 
@@ -87,8 +87,16 @@ html:has(#theme-checkbox:checked) .job-facts,
 html:has(#theme-checkbox:checked) .job-aside,
 html:has(#theme-checkbox:checked) .form-section,
 html:has(#theme-checkbox:checked) .team-figure,
+
 html:has(#theme-checkbox:checked) .member-entry {
   background-color: #252424 !important;
+  background-image: none !important;
+  border-color: #2c2c2c !important;
+  color: #e0e0e0 !important;
+}
+html:has(#theme-checkbox:checked) .country-note-inner,
+html:has(#theme-checkbox:checked) .country-note{
+  background-color: #1b1b1b !important;
   background-image: none !important;
   border-color: #2c2c2c !important;
   color: #e0e0e0 !important;

@@ -980,3 +980,9 @@ input[type="radio"]{
     bottom: 16px;
   }
 }
+
+.footer-links .footpics {
+    width: 45px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
