@@ -384,7 +384,9 @@ tbody th {
 .purpose-list {
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  margin: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .purpose-row {
@@ -407,7 +409,7 @@ tbody th {
 }
 
 .purpose-img {
-  height: auto;
+  height: 200px;
   max-height: 400px;
 }
 
@@ -584,7 +586,6 @@ tbody th {
 }
 
 .form-field .form-label {
-  color: #999;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -603,15 +604,6 @@ tbody th {
 .form-field .form-input:valid ~ label .form-label-char {
   transform: translateY(-20px);
   font-size: 14px;
-  color: #999;
-}
-
-.form-select {
-  background-color: #999;
-}
-
-select option {
-  background-color: #999;
 }
 
 input, select, textarea {  
@@ -644,7 +636,6 @@ input, select, textarea {
 .form-field .form-textarea {
   resize: vertical;
   width: 100%;
-  background-color: #999;
 }
 
 .gender-field {
