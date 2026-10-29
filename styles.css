@@ -980,34 +980,3 @@ input[type="radio"]{
     bottom: 16px;
   }
 }
-
-.job-card{
-  border: 4px dotted #000000;
-    border-radius: 1rem;
-  /* border-image: linear-gradient(45deg, #023e8a, #90e0ef) 1; */
-}
-
-
-.job-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-
-.job-card .career_pics {
-    max-width: 200px;
-    height: auto;
-    border-radius: 12px;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.job-card .career_pics:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(23, 109, 86, 0.2);
-}
