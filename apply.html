@@ -28,10 +28,14 @@
           <li><a href="about.html">About our team</a></li>
         </ul>
       </nav>
-      <div class="theme-switch-wrapper"> 
-        <input type="checkbox" id="theme-checkbox" /> 
-        <label for="theme-checkbox" class="theme-switch" title="Theme Change">🌙</label> 
+<!-- Dark/Light mode switch button -->
+      <div class="theme-switch-button">
+        <span class="theme-text">☀️LIGHT</span>
+        <input type="checkbox" id="theme-checkbox">
+        <label for="theme-checkbox" class="theme-switch"></label>
+        <span class="theme-text">DARK🌕</span>
       </div>
+
     </div>
   </header>
 
@@ -43,45 +47,138 @@
     </header>
 
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
+      
       <fieldset class="form-section">
+
         <legend>Role and contact details</legend>
+
         <div class="form-grid">
+
           <div class="form-field">
-            <label for="job-reference">Job reference number <span aria-hidden="true">*</span></label>
-            <input id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Enter exactly five letters or numbers." maxlength="5" autocomplete="off" placeholder="e.g. ED105" required>
-            <small>Exactly five letters or numbers, for example ED105.</small>
+            <input class="form-input" id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Enter exactly five letters or numbers." maxlength="5" autocomplete="off" required>
+            <label class="form-label" for="job-reference">
+              <span class="form-label-char" style="--index: 0">J</span>
+              <span class="form-label-char" style="--index: 1">o</span>
+              <span class="form-label-char" style="--index: 2">b</span>
+              <span class="form-label-char" style="--index: 3">&nbsp;</span>
+              <span class="form-label-char" style="--index: 4">r</span>
+              <span class="form-label-char" style="--index: 5">e</span>
+              <span class="form-label-char" style="--index: 6">f</span>
+              <span class="form-label-char" style="--index: 7">e</span>
+              <span class="form-label-char" style="--index: 8">r</span>
+              <span class="form-label-char" style="--index: 9">e</span>
+              <span class="form-label-char" style="--index: 10">n</span>
+              <span class="form-label-char" style="--index: 11">c</span>
+              <span class="form-label-char" style="--index: 12">e</span>
+            </label>
+            <small>Enter 5 letters, e.g. ED105</small>
           </div>
+
           <div class="form-field">
-            <label for="first-name">First name <span aria-hidden="true">*</span></label>
-            <input id="first-name" name="firstName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="given-name" placeholder="e.g. Minh" required>
+            <input class="form-input" id="first-name" name="firstName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="given-name" required>
+            <label class="form-label" for="first-name">
+              <span class="form-label-char" style="--index: 0">F</span>
+              <span class="form-label-char" style="--index: 1">i</span>
+              <span class="form-label-char" style="--index: 2">r</span>
+              <span class="form-label-char" style="--index: 3">s</span>
+              <span class="form-label-char" style="--index: 4">t</span>
+              <span class="form-label-char" style="--index: 5">&nbsp;</span>
+              <span class="form-label-char" style="--index: 6">n</span>
+              <span class="form-label-char" style="--index: 7">a</span>
+              <span class="form-label-char" style="--index: 8">m</span>
+              <span class="form-label-char" style="--index: 9">e</span>
+            </label>
+            <small>Enter only letters, e.g. Minh</small>
           </div>
+
           <div class="form-field">
-            <label for="last-name">Last name <span aria-hidden="true">*</span></label>
-            <input id="last-name" name="lastName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="family-name" required>
+            <input class="form-input" id="last-name" name="lastName" type="text" pattern="[A-Za-z]{1,20}" title="Use 1 to 20 letters only." maxlength="20" autocomplete="family-name" required>
+            <label class="form-label" for="last-name">
+              <span class="form-label-char" style="--index: 0">L</span>
+              <span class="form-label-char" style="--index: 1">a</span>
+              <span class="form-label-char" style="--index: 2">s</span>
+              <span class="form-label-char" style="--index: 3">t</span>
+              <span class="form-label-char" style="--index: 4">&nbsp;</span>
+              <span class="form-label-char" style="--index: 5">n</span>
+              <span class="form-label-char" style="--index: 6">a</span>
+              <span class="form-label-char" style="--index: 7">m</span>
+              <span class="form-label-char" style="--index: 8">e</span>
+            </label>
+            <small>E.g. Nguyen</small>
           </div>
+
           <div class="form-field">
-            <label for="date-of-birth">Date of birth <span aria-hidden="true">*</span></label>
-            <input id="date-of-birth" name="dateOfBirth" type="date" placeholder="dd/mm/yyyy" title="Enter a date in dd/mm/yyyy format." required>
+            <input class="form-input" id="date-of-birth" name="dateOfBirth" type="date" title="Enter a date in dd/mm/yyyy format." required>
+            <label class="form-label" for="date-of-birth">
+              <span class="form-label-char" style="--index: 0">D</span>
+              <span class="form-label-char" style="--index: 1">a</span>
+              <span class="form-label-char" style="--index: 2">t</span>
+              <span class="form-label-char" style="--index: 3">e</span>
+              <span class="form-label-char" style="--index: 4">&nbsp;</span>
+              <span class="form-label-char" style="--index: 5">o</span>
+              <span class="form-label-char" style="--index: 6">f</span>
+              <span class="form-label-char" style="--index: 7">&nbsp;</span>
+              <span class="form-label-char" style="--index: 8">b</span>
+              <span class="form-label-char" style="--index: 9">i</span>
+              <span class="form-label-char" style="--index: 10">r</span>
+              <span class="form-label-char" style="--index: 11">t</span>
+              <span class="form-label-char" style="--index: 12">h</span>
+            </label>
           </div>
+
           <fieldset class="form-field gender-field">
-            <legend>Gender <span aria-hidden="true">*</span></legend>
+            <legend>Gender</legend>
             <div class="choice-row">
               <label><input type="radio" name="gender" value="female" required> Female</label>
               <label><input type="radio" name="gender" value="male"> Male</label>
               <label><input type="radio" name="gender" value="prefer-not-to-say"> Prefer not to say</label>
             </div>
           </fieldset>
+
           <div class="form-field">
-            <label for="street-address">Street address <span aria-hidden="true">*</span></label>
-            <input id="street-address" name="streetAddress" type="text" maxlength="40" autocomplete="street-address" placeholder="e.g. 12 Nguyen Trai Street" required>
+            <input class="form-input" id="street-address" name="streetAddress" type="text" maxlength="40" autocomplete="street-address" required>
+            <label class="form-label" for="street-address">
+              <span class="form-label-char" style="--index: 0">S</span>
+              <span class="form-label-char" style="--index: 1">t</span>
+              <span class="form-label-char" style="--index: 2">r</span>
+              <span class="form-label-char" style="--index: 3">e</span>
+              <span class="form-label-char" style="--index: 4">e</span>
+              <span class="form-label-char" style="--index: 5">t</span>
+              <span class="form-label-char" style="--index: 6">&nbsp;</span>
+              <span class="form-label-char" style="--index: 7">a</span>
+              <span class="form-label-char" style="--index: 8">d</span>
+              <span class="form-label-char" style="--index: 9">d</span>
+              <span class="form-label-char" style="--index: 10">r</span>
+              <span class="form-label-char" style="--index: 11">e</span>
+              <span class="form-label-char" style="--index: 12">s</span>
+              <span class="form-label-char" style="--index: 13">s</span>
+            </label>
+            <small>E.g. 12, Tran Hung Dao</small>
           </div>
+
           <div class="form-field">
-            <label for="suburb">Suburb / town <span aria-hidden="true">*</span></label>
-            <input id="suburb" name="suburb" type="text" maxlength="40" autocomplete="address-level2" placeholder="e.g. District 1, Ho Chi Minh City" required>
+            <input class="form-input" id="suburb" name="suburb" type="text" maxlength="40" autocomplete="address-level2" required>
+            <label class="form-label" for="suburb">
+              <span class="form-label-char" style="--index: 0">S</span>
+              <span class="form-label-char" style="--index: 1">u</span>
+              <span class="form-label-char" style="--index: 2">b</span>
+              <span class="form-label-char" style="--index: 3">u</span>
+              <span class="form-label-char" style="--index: 4">r</span>
+              <span class="form-label-char" style="--index: 5">b</span>
+              <span class="form-label-char" style="--index: 6">&nbsp;</span>
+              <span class="form-label-char" style="--index: 7">/</span>
+              <span class="form-label-char" style="--index: 8">&nbsp;</span>
+              <span class="form-label-char" style="--index: 9">t</span>
+              <span class="form-label-char" style="--index: 10">o</span>
+              <span class="form-label-char" style="--index: 11">r</span>
+              <span class="form-label-char" style="--index: 12">m</span>
+            </label>
+            <small>E.g. District 1, Ho Chi Minh</small>
           </div>
+
           <div class="form-field">
-            <label for="state">State or territory <span aria-hidden="true">*</span></label>
-            <select id="state" name="state" autocomplete="address-level1" required>
+            <label for="state">State or territory</label>
+            <select class="form-select" id="state" name="state" autocomplete="address-level1" required>
               <option value="" selected disabled>Select a state or territory</option>
               <option value="VIC">VIC</option><option value="NSW">NSW</option>
               <option value="QLD">QLD</option><option value="NT">NT</option>
@@ -89,17 +186,58 @@
               <option value="TAS">TAS</option><option value="ACT">ACT</option>
             </select>
           </div>
+
           <div class="form-field">
-            <label for="postcode">Postcode <span aria-hidden="true">*</span></label>
-            <input id="postcode" name="postcode" type="text" inputmode="numeric" pattern="[0-9]{4}" title="Enter exactly four digits." maxlength="4" autocomplete="postal-code" placeholder="e.g. 7000" required>
+            <input class="form-input" id="postcode" name="postcode" type="text" inputmode="numeric" pattern="[0-9]{4}" title="Enter exactly four digits." maxlength="4" autocomplete="postal-code" required>
+            <label class="form-label" for="postcode">
+              <span class="form-label-char" style="--index: 0">P</span>
+              <span class="form-label-char" style="--index: 1">o</span>
+              <span class="form-label-char" style="--index: 2">s</span>
+              <span class="form-label-char" style="--index: 3">t</span>
+              <span class="form-label-char" style="--index: 4">c</span>
+              <span class="form-label-char" style="--index: 5">o</span>
+              <span class="form-label-char" style="--index: 6">d</span>
+              <span class="form-label-char" style="--index: 7">e</span>
+            </label>
+            <small>E.g. 7000</small>
+
           </div>
           <div class="form-field">
-            <label for="email">Email address <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="e.g. minh@example.com" required>
+            <input class="form-input" id="email" name="email" type="email" autocomplete="email" required>
+            <label class="form-label" for="email">
+              <span class="form-label-char" style="--index: 0">E</span>
+              <span class="form-label-char" style="--index: 1">m</span>
+              <span class="form-label-char" style="--index: 2">a</span>
+              <span class="form-label-char" style="--index: 3">i</span>
+              <span class="form-label-char" style="--index: 4">l</span>
+              <span class="form-label-char" style="--index: 5">&nbsp;</span>
+              <span class="form-label-char" style="--index: 6">a</span>
+              <span class="form-label-char" style="--index: 7">d</span>
+              <span class="form-label-char" style="--index: 8">d</span>
+              <span class="form-label-char" style="--index: 9">r</span>
+              <span class="form-label-char" style="--index: 10">e</span>
+              <span class="form-label-char" style="--index: 11">s</span>
+              <span class="form-label-char" style="--index: 12">s</span>
+            </label>
+            <small>E.g. minh@gmail.com</small>
           </div>
+
           <div class="form-field">
-            <label for="phone">Phone number <span aria-hidden="true">*</span></label>
-            <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{8,12}" title="Enter 8 to 12 digits, with no spaces or symbols." maxlength="12" autocomplete="tel" placeholder="e.g. 0912345678" required>
+            <input class="form-input" id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{8,12}" title="Enter 8 to 12 digits, with no spaces or symbols." maxlength="12" autocomplete="tel" required>
+            <label class="form-label" for="phone">
+              <span class="form-label-char" style="--index: 0">P</span>
+              <span class="form-label-char" style="--index: 1">h</span>
+              <span class="form-label-char" style="--index: 2">o</span>
+              <span class="form-label-char" style="--index: 3">n</span>
+              <span class="form-label-char" style="--index: 4">e</span>
+              <span class="form-label-char" style="--index: 5">&nbsp;</span>
+              <span class="form-label-char" style="--index: 6">n</span>
+              <span class="form-label-char" style="--index: 7">u</span>
+              <span class="form-label-char" style="--index: 8">m</span>
+              <span class="form-label-char" style="--index: 9">b</span>
+              <span class="form-label-char" style="--index: 10">e</span>
+              <span class="form-label-char" style="--index: 11">r</span>
+            </label>
           </div>
         </div>
       </fieldset>
@@ -107,27 +245,35 @@
       <fieldset class="form-section skill-fieldset">
         <legend>Skills and experience</legend>
         <p class="field-hint">Select any skills that apply.</p>
-        <div class="choice-grid">
-          <label><input type="checkbox" name="skills" value="web-development"> Web development</label>
-          <label><input type="checkbox" name="skills" value="accessible-design"> Accessible design</label>
-          <label><input type="checkbox" name="skills" value="learning-design"> Learning design</label>
-          <label><input type="checkbox" name="skills" value="user-research"> User research</label>
-          <label><input type="checkbox" name="skills" value="content-writing"> Content writing</label>
-          <label><input type="checkbox" name="skills" value="project-management"> Project management</label>
+
+        <div class="skill-grid">
+          
+          <label for="web"><input type="checkbox" id="web" name="skills" value="web-development">Web Development</label>
+
+          <label for="access-des"><input type="checkbox" id="access-des" name="skills" value="accessible-design">Accessible Design</label>
+
+          <label for="learn-des"><input type="checkbox" id="learn-des" name="skills" value="learning-design">Learning Design</label>
+
+          <label for="user"><input type="checkbox" id="user" name="skills" value="user-research">User Research</label>
+
+          <label for="content"><input type="checkbox" id="content" name="skills" value="content-writing">Content writing</label>
+
+          <label for="project"><input type="checkbox" id="project" name="skills" value="project-management">Project Management</label>
+
         </div>
-        <div class="form-field other-skills">
-          <label for="other-skills">Other skills or information (optional)</label>
-          <textarea id="other-skills" name="otherSkills" rows="5" placeholder="Share any other skills or relevant experience you'd like us to know about."></textarea>
-          <div class="form-field">
-    <label for="cv-upload">Please upload your CV here &#40;Image or PDF only&#41; </label>
-      
-    <input type="file" id="cv-upload" name="cv" accept=".pdf, image/*">
-    <span class="upload-text">Click Choose file to upload your CV!</span>
-      
-  </div>
+
+        <div class="form-field">
+          <label for="other-skills">
+            Other skills or information &lpar;Optional&rpar;</label>
+          <textarea class="form-input form-textarea" id="other-skills" name="otherSkills" rows="4"  placeholder="Share your any other skills or experience you'd like us to know about."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="cv-upload">Please upload your CV here &#40;Image or PDF only&#41; </label>
+          <input type="file" id="cv-upload" name="cv" accept=".pdf, image/*" >
         </div>
       </fieldset>
-      <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+
       <button class="button button-primary submit-button" type="submit">Submit application</button>
     </form>
   </main>

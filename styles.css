@@ -29,6 +29,11 @@ a {
   color: rgb(29, 95, 210);
 }
 
+.main-nav ul {
+  flex-wrap: wrap;
+  padding: 0;
+}
+
 /* shared.css: visible keyboard focus for links and form controls */
 a:focus-visible,
 button:focus-visible,
@@ -128,7 +133,7 @@ textarea:focus-visible {
 }
 
 .page-intro {
-  max-width: 760px;
+  /* max-width: 760px; */
   margin-bottom: 35px;
 }
 
@@ -321,24 +326,40 @@ tbody th {
 
 .section-heading {
   max-width: 680px;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
-.value-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(3, 1fr);
+.purpose-list {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
 }
 
-.value-card {
-  padding: 22px;
-  border: 1px solid rgb(220, 234, 252);
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
+.purpose-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 22px;
+}
+.purpose-card {
+  padding: 15px;
   box-shadow: 0 8px 20px rgba(16, 42, 90, 0.04);
+  background-color: white;
 }
 
-.value-number {
+.purpose-card-img {
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(16, 42, 90, 0.04);
+  background-color: white;
+  width: fit-content;
+}
+
+.purpose-img {
+  height: auto;
+  max-height: 400px;
+}
+
+.purpose-number {
   color: rgb(29, 95, 210);
   font-weight: bold;
 }
@@ -368,6 +389,7 @@ tbody th {
 
 .search-controls input {
   flex: 1;
+  outline: none;
 }
 
 .role-link {
@@ -492,18 +514,55 @@ tbody th {
 .form-field {
   min-width: 0;
   margin: 10px 0;
+  position: relative;
 }
 
-.form-field > label {
+.form-field input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
   display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
 }
 
-input,
-select,
-textarea {
-  max-width: 100%;
+.form-field .form-input:focus {
+  outline: none;
+}
+
+.form-field .form-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.form-field .form-label-char {
+  transition: 0.1s ease all;
+  transition-delay: calc(var(--index) * .03s);
+}
+
+.form-field .form-input:focus ~ label .form-label-char,
+.form-field .form-input:valid ~ label .form-label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #999;
+}
+
+.form-select {
+  background-color: #999;
+}
+
+select option {
+  background-color: #999;
+}
+
+input, select, textarea {  
   padding: 10px;
   border: 1px solid rgb(184, 201, 194);
   border-radius: 5px;
@@ -511,14 +570,29 @@ textarea {
 }
 
 .form-field input:not([type="radio"]):not([type="checkbox"]),
-.form-field select,
-.form-field textarea {
+.form-field select {
   width: 100%;
 }
 
-.form-field small {
-  display: block;
-  color: rgb(83, 99, 109);
+.form-field input[type="date"] {
+  transition: ease 0.3s;
+}
+
+/* Hide the date format when the field is empty */
+.form-field input[type="date"]:not(:focus):not(:valid) {
+  color: transparent;
+}
+
+/* Show the date when the user clicks the field */
+.form-field input[type="date"]:focus,
+.form-field input[type="date"]:valid {
+  transition-delay: 0.4s;
+}
+
+.form-field .form-textarea {
+  resize: vertical;
+  width: 100%;
+  background-color: #999;
 }
 
 .gender-field {
@@ -531,32 +605,61 @@ textarea {
 }
 
 .choice-row,
-.choice-grid {
+.skill-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px 20px;
 }
 
-.choice-grid {
+.skill-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.choice-row label,
-.choice-grid label {
+.skill-grid input[type="checkbox"] {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #103886;
+  border-radius: 6px;
+  background-color: transparent;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.skill-grid input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #103886;
+    border-radius: 2px;
+
+    transform: scale(0);
+    transition: transform 0.12s ease-in-out;
+}
+
+.skill-grid input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.skill-grid label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.choice-row label {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"]{
   width: auto;
   accent-color: rgb(29, 95, 210);
-}
-
-.other-skills {
-  max-width: 700px;
 }
 
 .required-note {
@@ -566,6 +669,7 @@ input[type="checkbox"] {
 /* about.html: team, member details, and fun-facts table */
 .about-section {
   margin: 45px 0;
+  padding: 22px;
 }
 
 .team-overview {
@@ -581,7 +685,7 @@ input[type="checkbox"] {
 
 .team-figure {
   margin: 0;
-  padding: 22px;
+  padding: 15px;
   border: 2px solid rgb(29, 95, 210);
   border-radius: 10px;
   background: rgb(255, 255, 255);
@@ -613,8 +717,6 @@ input[type="checkbox"] {
   padding-top: 52px;
   border: 1px solid rgb(220, 229, 226);
   border-radius: 10px;
-  background: rgb(245, 248, 247);
-  background-color: rgb(228, 211, 188);
 
 }
 
@@ -665,6 +767,101 @@ input[type="checkbox"] {
   object-fit: cover;
 }
 
+.support-chat {
+  position: fixed;
+  z-index: 10;
+  right: 24px;
+  bottom: 24px;
+}
+
+.support-chat > summary {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(29, 95, 210), rgb(18, 60, 144));
+  box-shadow: 0 8px 22px rgba(13, 35, 95, 0.3);
+  cursor: pointer;
+  list-style: none;
+}
+
+.support-chat > summary::-webkit-details-marker {
+  display: none;
+}
+
+.support-chat > summary:hover {
+  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
+}
+
+.support-chat > summary:focus-visible {
+  outline: 3px solid rgb(220, 128, 90);
+  outline-offset: 3px;
+}
+
+.support-chat-icon {
+  display: grid;
+  width: 30px;
+  height: 23px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.support-chat-window {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 14px);
+  width: min(350px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid rgb(220, 234, 252);
+  border-radius: 12px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 12px 32px rgba(13, 35, 95, 0.2);
+}
+
+.support-chat-header {
+  padding: 18px 20px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgb(18, 60, 144), rgb(11, 46, 107));
+}
+
+.support-chat-header h2,
+.support-chat-header p {
+  margin: 0;
+  color: inherit;
+}
+
+.support-chat-header h2 {
+  font-size: 1.15rem;
+}
+
+.support-chat-message {
+  padding: 20px;
+}
+
+.support-chat-message p {
+  margin: 0 0 14px;
+}
+
+.support-chat-message a {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background: rgb(18, 60, 144);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.support-chat-message a:hover {
+  background: rgb(11, 46, 107);
+}
+
 /* responsive.css: stack page layouts on narrow screens */
 @media (max-width: 700px) {
   .header-inner,
@@ -672,11 +869,6 @@ input[type="checkbox"] {
     align-items: flex-start;
     flex-direction: column;
     padding: 16px 0;
-  }
-
-  .main-nav ul {
-    flex-wrap: wrap;
-    padding: 0;
   }
 
   .hero,
@@ -716,6 +908,11 @@ input[type="checkbox"] {
 
   .footer-inner {
     width: 92%;
+  }
+
+  .support-chat {
+    right: 16px;
+    bottom: 16px;
   }
 }
 

@@ -22,15 +22,18 @@
       </a>
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a aria-current="page" href="index.html">Home</a></li>
           <li><a href="jobs.html">Careers</a></li>
           <li><a href="apply.html">Apply</a></li>
           <li><a href="about.html">About our team</a></li>
         </ul>
       </nav>
-      <div class="theme-switch-wrapper"> 
-        <input type="checkbox" id="theme-checkbox" /> 
-        <label for="theme-checkbox" class="theme-switch" title="Theme Change">🌙</label> 
+      <!-- Dark/Light mode switch button -->
+      <div class="theme-switch-button">
+        <span class="theme-text">☀️LIGHT</span>
+        <input type="checkbox" id="theme-checkbox">
+        <label for="theme-checkbox" class="theme-switch"></label>
+        <span class="theme-text">DARK🌕</span>
       </div>
     </div>
   </header>
@@ -56,23 +59,43 @@
         <h2>Useful technology. Human outcomes.</h2>
         <p>We believe the best learning products make room for different needs, voices and ways of learning.</p>
       </div>
-      <div class="value-grid">
-        <article class="value-card">
-          <span class="value-number" aria-hidden="true">01</span>
+    </section>
+
+    <section class= "purpose-list">
+      
+      <article class="purpose-row">
+        <div class="purpose-card">
+          <span class="purpose-number" aria-hidden="true">01</span>
           <h3>Designed for access</h3>
           <p>We build with accessibility in mind so more people can participate with confidence.</p>
-        </article>
-        <article class="value-card">
-          <span class="value-number" aria-hidden="true">02</span>
+        </div>
+        <div class="purpose-card-img">
+          <img class="purpose-img" src="images/purpose_1.jpg" alt="Students using assistive technology or learning together in an accessible classroom.">
+        </div>
+      </article>
+      
+      <article class="purpose-row">
+        <div class="purpose-card-img">
+          <img class="purpose-img" src="images/purpose_2.jpg" alt="An educator listening to students or helping them use a laptop.">
+        </div>
+        <div class="purpose-card">
+          <span class="purpose-number" aria-hidden="true">02</span>
           <h3>Made with educators</h3>
           <p>We listen to the people who teach and learn before deciding what technology should do.</p>
-        </article>
-        <article class="value-card">
-          <span class="value-number" aria-hidden="true">03</span>
+        </div>
+      </article>
+        
+      <article class="purpose-row">
+        <div class="purpose-card">
+          <span class="purpose-number" aria-hidden="true">03</span>
           <h3>Always learning</h3>
           <p>We test, improve and keep asking how digital learning can work better for everyone.</p>
-        </article>
-      </div>
+        </div>
+        <div class="purpose-card-img">
+          <img class="purpose-img" src="images/purpose_3.jpg" alt="A group of students sharing ideas while working on a digital project.">
+        </div>
+      </article>
+
     </section>
 
     <section class="section roles-section" aria-labelledby="roles-heading">
@@ -97,6 +120,7 @@
         <h2 id="approach-heading">Small team, shared purpose.</h2>
         <p>Our work connects the people, practices and tools behind a more supportive learning experience.</p>
       </div>
+
       <div class="table-wrap">
         <table class="purpose-table">
           <caption>How our work supports learners and educators</caption>
@@ -151,5 +175,20 @@
       <p class="copyright">© 2026 EduTechies. Built for learning.</p>
     </div>
   </footer>
+  <details class="support-chat">
+    <summary aria-label="Toggle support chat" title="Toggle support chat">
+      <span class="support-chat-icon" aria-hidden="true">•••</span>
+    </summary>
+    <section class="support-chat-window" aria-labelledby="support-chat-heading">
+      <div class="support-chat-header">
+        <h2 id="support-chat-heading">EduTechies Support</h2>
+        <p>How can we help?</p>
+      </div>
+      <div class="support-chat-message">
+        <p>Thanks for reaching out. Send our team an email and we’ll be happy to help.</p>
+        <a href="mailto:info@edutechies.com">Email Support</a>
+      </div>
+    </section>
+  </details>
 </body>
 </html>
