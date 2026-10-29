@@ -81,7 +81,7 @@ html:has(#theme-checkbox:checked) .roles-section,
 html:has(#theme-checkbox:checked) .about-section,
 html:has(#theme-checkbox:checked) .purpose-card,
 html:has(#theme-checkbox:checked) .search-form,
-html:has(#theme-checkbox:checked) .job-card,
+
 html:has(#theme-checkbox:checked) .job-facts,
 html:has(#theme-checkbox:checked) .job-aside,
 html:has(#theme-checkbox:checked) .form-section,
@@ -107,6 +107,11 @@ html:has(#theme-checkbox:checked) .support-chat-message {
   color: #e0e0e0 !important;
 }
 
+html:has(#theme-checkbox:checked) .job-card{
+  box-shadow: lightgray !important;
+  background-color: #252424 !important;
+  border-color: white !important;
+}
 
 html:has(#theme-checkbox:checked) table,
 html:has(#theme-checkbox:checked) th,
