@@ -1,0 +1,71 @@
+.purpose-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.purpose-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+.purpose-card-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card-img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+.hero-art {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-art:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+.hero-copy {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-copy:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+.button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(48, 73, 110, 0.18);
+}
+
+.member-entry{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+}
+.member-entry:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+
+.team-figure{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-figure:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+.job-card{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(39, 72, 117, 0.18), inset 1px 1px 1px rgba(255, 255, 255, 0.68);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-nav ul::before {
+    transition: none;
+  }
+}

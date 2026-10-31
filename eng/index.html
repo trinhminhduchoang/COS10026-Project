@@ -1,26 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="EduTechies creates accessible digital learning tools and platforms for education.">
   <title>EduTechies | Learning that opens doors</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles_animation.css">
-  <link rel="stylesheet" href="styles_darkmode.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles_animation.css">
+  <link rel="stylesheet" href="../styles/styles_darkmode.css">
   <style>
     .hero-copy { max-width: 560px; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
+  <header class="site-header glass-panel">
     <div class="header-inner">
       <a class="brand" href="index.html">
-        <img src="./Logoweb.png" width="55">
+        <img src="../images/Logoweb.png" width="55">
         <span class="brand-name">EduTechies</span>
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav glass-panel">
         <ul>
           <li><a aria-current="page" href="index.html">Home</a></li>
           <li><a href="jobs.html">Careers</a></li>
@@ -28,57 +28,64 @@
           <li><a href="about.html">About our team</a></li>
         </ul>
       </nav>
-      <!-- Dark/Light mode switch button -->
-      <div class="theme-switch-button">
-        <span class="theme-text">☀️LIGHT</span>
-        <input type="checkbox" id="theme-checkbox">
-        <label for="theme-checkbox" class="theme-switch"></label>
-        <span class="theme-text">DARK🌕</span>
+      <div class="header-controls">
+        <!-- Dark/Light mode switch button -->
+        <div class="theme-switch-button">
+          <span class="theme-text">☀️LIGHT</span>
+          <input type="checkbox" id="theme-checkbox">
+          <label for="theme-checkbox" class="theme-switch"></label>
+          <span class="theme-text">DARK🌕</span>
+        </div>
+        <div class="language-switch" role="group" aria-label="Choose language">
+          <span class="language-switch-thumb" aria-hidden="true"></span>
+          <a class="language-option" href="index.html" lang="en" aria-label="English" aria-current="page">🇬🇧</a>
+          <a class="language-option" href="../vi/index.html" lang="vi" aria-label="Tiếng Việt">🇻🇳</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="main">
     <section class="hero">
-      <div class="hero-copy">
+      <div class="hero-copy hero-card glass-panel">
         <p class="eyebrow">Technology for better learning</p>
         <h1>Make learning work for everyone.</h1>
         <p class="hero-lede">We build thoughtful digital tools that help educators teach and help every learner find their way forward.</p>
         <p>EduTechies is an educational technology company developing accessible learning platforms and practical online resources. We bring design, software and education together to make digital learning clearer, more inclusive and more engaging.</p>
         <a class="button button-primary" href="jobs.html">Explore open roles</a>
       </div>
-      <div class="hero-art">
-        <img class="hero-image" src="images.jfif" width="640" height="480" alt="Illustration of a learner using the EduTechies digital learning platform" style="border-radius: 12px;"><br>
+      <div class="hero-art hero-card glass-panel">
+        <img class="hero-image" src="../images/images.jfif" width="640" height="480" alt="Illustration of a learner using the EduTechies digital learning platform" style="border-radius: 12px;"><br>
         <p class="art-caption">Curiosity, supported by good technology.</p>
       </div>
     </section>
 
-    <section class="section section-narrow">
+    <section class="section section-narrow glass-panel purpose-intro blue-panel">
       <div class="section-heading">
         <p class="eyebrow">Our purpose</p>
         <h2>Useful technology. Human outcomes.</h2>
-        <p>We believe the best learning products make room for different needs, voices and ways of learning.</p>
+        <p>We build digital learning tools for Vietnam’s diverse classrooms, with care for different learning needs, levels of internet access and the languages and experiences of local learners.</p>
       </div>
     </section>
 
     <section class= "purpose-list">
       
       <article class="purpose-row">
-        <div class="purpose-card">
+        <div class="purpose-card glass-panel">
           <span class="purpose-number" aria-hidden="true">01</span>
           <h3>Designed for access</h3>
           <p>We build with accessibility in mind so more people can participate with confidence.</p>
         </div>
-        <div class="purpose-card-img">
-          <img class="purpose-img" src="images/purpose_1.jpg" alt="Students using assistive technology or learning together in an accessible classroom.">
+        <div class="purpose-card-img glass-panel">
+          <img class="purpose-img" src="../images/purpose_1.jpg" alt="Students using assistive technology or learning together in an accessible classroom.">
         </div>
       </article>
       
       <article class="purpose-row">
-        <div class="purpose-card-img">
-          <img class="purpose-img" src="images/purpose_2.jpg" alt="An educator listening to students or helping them use a laptop.">
+        <div class="purpose-card-img glass-panel blue-panel">
+          <img class="purpose-img" src="../images/purpose_2.jpg" alt="An educator listening to students or helping them use a laptop.">
         </div>
-        <div class="purpose-card">
+        <div class="purpose-card glass-panel blue-panel">
           <span class="purpose-number" aria-hidden="true">02</span>
           <h3>Made with educators</h3>
           <p>We listen to the people who teach and learn before deciding what technology should do.</p>
@@ -86,25 +93,25 @@
       </article>
         
       <article class="purpose-row">
-        <div class="purpose-card">
+        <div class="purpose-card glass-panel">
           <span class="purpose-number" aria-hidden="true">03</span>
           <h3>Always learning</h3>
           <p>We test, improve and keep asking how digital learning can work better for everyone.</p>
         </div>
-        <div class="purpose-card-img">
-          <img class="purpose-img" src="images/purpose_3.jpg" alt="A group of students sharing ideas while working on a digital project.">
+        <div class="purpose-card-img glass-panel">
+          <img class="purpose-img" src="../images/purpose_3.jpg" alt="A group of students sharing ideas while working on a digital project.">
         </div>
       </article>
 
     </section>
 
-    <section class="section roles-section" aria-labelledby="roles-heading">
+    <section class="section roles-section glass-panel blue-panel" aria-labelledby="roles-heading">
       <div class="section-heading">
         <p class="eyebrow">Build with us</p>
         <h2 id="roles-heading">A place for your next idea.</h2>
         <p>We’re looking for people who care about craft, collaboration and better learning experiences.</p>
       </div>
-      <form class="search-form" action="jobs.html" method="get" role="search">
+      <form class="search-form glass-panel" action="jobs.html" method="get" role="search">
         <label for="job-search">Search open roles</label>
         <div class="search-controls">
           <input id="job-search" name="q" type="search" placeholder="Try “developer” or “design”">
@@ -114,14 +121,14 @@
       <p class="role-link"><a href="jobs.html">View all current opportunities <span aria-hidden="true">→</span></a></p>
     </section>
 
-    <section class="section section-narrow" aria-labelledby="approach-heading">
+    <section class="section section-narrow glass-panel" aria-labelledby="approach-heading">
       <div class="section-heading">
         <p class="eyebrow">How we work</p>
         <h2 id="approach-heading">Small team, shared purpose.</h2>
         <p>Our work connects the people, practices and tools behind a more supportive learning experience.</p>
       </div>
 
-      <div class="table-wrap">
+      <div class="table-wrap glass-panel">
         <table class="purpose-table">
           <caption>How our work supports learners and educators</caption>
           <thead>
@@ -145,21 +152,21 @@
       </div>
     </section>
 
-    <section class="country-note" aria-labelledby="country-heading">
+    <section class="country-note glass-panel blue-panel" aria-labelledby="country-heading">
       <div class="country-note-inner">
         <p class="eyebrow">Respect and responsibility</p>
-        <h2 id="country-heading">Learning with respect for Country and community.</h2>
-        <p>We acknowledge the Wurundjeri People of the Kulin Nation, Traditional Owners of the lands on which Swinburne operates, and pay our respects to Elders past and present. We recognise the continuing connection of Aboriginal and Torres Strait Islander peoples to Country, culture and knowledge.</p>
-        <p>We are committed to listening to First Nations educators and communities and to supporting learning technology that respects their knowledge, priorities and self-determination. We encourage Aboriginal and Torres Strait Islander people to apply for our roles.</p>
+        <h2 id="country-heading">Learning with respect for Vietnam’s communities and cultures.</h2>
+        <p>Vietnam is home to 54 officially recognised ethnic groups, each with its own histories, knowledge and cultural traditions. We value the many ways communities across the country learn, teach and share knowledge.</p>
+        <p>We aim to work alongside local educators, learners and families to create accessible digital learning that reflects regional needs, supports Vietnamese and other community languages where possible, and respects local knowledge and customs.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer glass-panel">
     <div class="footer-inner">
       <div>
         <a class="brand footer-brand" href="index.html">
-          <img src="./Logoweb.png" width="65">
+          <img src="../images/Logoweb.png" width="65">
           <span class="brand-name">EduTechies</span>
         </a>
         <p class="footer-tagline">Learning that opens doors.</p>
@@ -167,9 +174,9 @@
       <div>
         <h2 class="footer-heading">Connect</h2>
         <ul class="footer-links">
-          <li><a target="blank" href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog">Jira project</a></li>
-          <li><a target="blank" href="https://github.com/trinhminhduchoang/COS10026-Project">GitHub repository</a></li>
-          <li><a target="blank" href="mailto:info@edutechies.com">info@edutechies.com</a></li>
+          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog" target="_blank" rel="noopener noreferrer"><img class="footpics" src="../images/jira-removebg-preview.png" alt="">Jira project</a></li>
+          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project" target="_blank" rel="noopener noreferrer"><img class="footpics" src="../images/png-clipart-github-computer-icons-logo-readme-github-logo-monochrome-removebg-preview.png" alt="">GitHub repository</a></li>
+          <li><a href="mailto:info@edutechies.com"><img class="footpics" src="../images/google-gmail-envelope-vector-symbol-logo-icon-701751694791058rlo6laiga4-removebg-preview.png" alt="">info@edutechies.com</a></li>
         </ul>
       </div>
       <p class="copyright">© 2026 EduTechies. Built for learning.</p>
@@ -179,8 +186,8 @@
     <summary aria-label="Toggle support chat" title="Toggle support chat">
       <span class="support-chat-icon" aria-hidden="true">•••</span>
     </summary>
-    <section class="support-chat-window" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header">
+    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
+      <div class="support-chat-header glass-panel">
         <h2 id="support-chat-heading">EduTechies Support</h2>
         <p>How can we help?</p>
       </div>
