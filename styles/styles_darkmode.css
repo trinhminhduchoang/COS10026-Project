@@ -1,0 +1,230 @@
+/* Dark/Light mode switch button */
+#theme-checkbox {
+  display: none;
+}
+.theme-switch-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.theme-switch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background-color: #2C4F91;
+  border: 2px solid #2C4F91;
+  border-radius: 20px;
+  color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition-duration: .2s;
+}
+
+.theme-switch:focus-visible {
+  outline: 3px solid rgb(220, 128, 90);
+  outline-offset: 3px;
+}
+
+.theme-text {
+  font-size: 13px;
+  white-space: nowrap;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  left: 5px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition-duration: .2s;
+  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+  border: 5px solid white;
+}
+
+#theme-checkbox:checked + .theme-switch::after {
+  transform: translateX(100%);
+  transition-duration: .2s;
+  background-color: white;
+}
+
+
+#theme-checkbox:checked + .theme-switch {
+  background-color: #1A2230;
+  transition-duration: .2s;
+}
+
+/* Color related configs */
+html:has(#theme-checkbox:checked) body {
+  background-color: #17283d !important;
+  background-image:
+    radial-gradient(circle at 14% 12%, rgba(88, 132, 190, 0.2), transparent 34%),
+    radial-gradient(circle at 86% 18%, rgba(91, 126, 176, 0.17), transparent 36%),
+    radial-gradient(circle at 78% 88%, rgba(62, 115, 150, 0.15), transparent 38%),
+    linear-gradient(to right, rgba(153, 190, 235, 0.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(153, 190, 235, 0.13) 1px, transparent 1px) !important;
+  color: #e0e0e0 !important;
+}
+
+html:has(#theme-checkbox:checked) h1,
+html:has(#theme-checkbox:checked) h2,
+html:has(#theme-checkbox:checked) h3,
+html:has(#theme-checkbox:checked) h4,
+html:has(#theme-checkbox:checked) p,
+html:has(#theme-checkbox:checked) li,
+html:has(#theme-checkbox:checked) a,
+html:has(#theme-checkbox:checked) dt,
+html:has(#theme-checkbox:checked) dd,
+html:has(#theme-checkbox:checked) .eyebrow,
+html:has(#theme-checkbox:checked) caption,
+html:has(#theme-checkbox:checked) .job-reference,
+html:has(#theme-checkbox:checked) .job-summary,
+html:has(#theme-checkbox:checked) figcaption {
+  color: #f1f1f1 !important;
+}
+html:has(#theme-checkbox:checked) .glass-panel {
+  border-color: rgba(194, 219, 250, 0.24) !important;
+  background-color: rgba(35, 57, 84, 0.12) !important;
+  background-image: linear-gradient(135deg, rgba(104, 145, 197, 0.12), rgba(31, 51, 77, 0.16)) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.12) !important;
+  color: #e5e9f0 !important;
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+html:has(#theme-checkbox:checked) .blue-panel.glass-panel {
+  border-color: rgba(190, 218, 255, 0.3) !important;
+  background-color: #1d3556 !important;
+  background-image: linear-gradient(135deg, #294a75, #1d3556) !important;
+}
+
+html:has(#theme-checkbox:checked) .support-chat-window,
+html:has(#theme-checkbox:checked) .support-chat-message {
+  border-color: rgba(194, 219, 250, 0.24) !important;
+  background-color: rgba(35, 57, 84, 0.12) !important;
+  background-image: linear-gradient(135deg, rgba(104, 145, 197, 0.12), rgba(31, 51, 77, 0.16)) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(255, 255, 255, 0.12) !important;
+  color: #e0e0e0 !important;
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+html:has(#theme-checkbox:checked) .support-chat-header.glass-panel {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #294a75, #1d3556) !important;
+}
+
+html:has(#theme-checkbox:checked) .support-chat-message {
+  color: #f1f1f1 !important;
+  background: #24364d !important;
+}
+
+html:has(#theme-checkbox:checked) .job-facts > div {
+  border-color: rgba(194, 219, 250, 0.24);
+  background: linear-gradient(145deg, rgba(104, 145, 197, 0.12), rgba(31, 51, 77, 0.2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+html:has(#theme-checkbox:checked) .job-facts > div:hover {
+  border-color: rgba(125, 185, 245, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+html:has(#theme-checkbox:checked) .job-reference strong {
+  color: #b9d8fa !important;
+}
+
+html:has(#theme-checkbox:checked) input:not([type="checkbox"]):not([type="radio"]),
+html:has(#theme-checkbox:checked) select,
+html:has(#theme-checkbox:checked) textarea {
+  border-color: rgba(194, 219, 250, 0.22) !important;
+  background-color: rgba(25, 43, 64, 0.84) !important;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.04) !important;
+}
+
+html:has(#theme-checkbox:checked) input:not([type="checkbox"]):not([type="radio"]):not([type="date"]),
+html:has(#theme-checkbox:checked) select,
+html:has(#theme-checkbox:checked) textarea,
+html:has(#theme-checkbox:checked) input[type="date"]:focus,
+html:has(#theme-checkbox:checked) input[type="date"]:valid {
+  color: #f3f5fa !important;
+}
+
+html:has(#theme-checkbox:checked) .skill-grid input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a9ccff;
+  border-radius: 5px;
+  background-color: #1b2c44;
+}
+
+html:has(#theme-checkbox:checked) .skill-grid input[type="checkbox"]::before {
+  width: 10px;
+  height: 10px;
+  background-color: #c6e0ff;
+}
+
+html:has(#theme-checkbox:checked) .skill-grid input[type="checkbox"]:focus-visible {
+  outline: 3px solid #e6f2ff;
+  outline-offset: 3px;
+}
+
+html:has(#theme-checkbox:checked) table,
+html:has(#theme-checkbox:checked) th,
+html:has(#theme-checkbox:checked) td {
+  background-color: rgba(25, 43, 64, 0.7) !important;
+  border-color: rgba(194, 219, 250, 0.16) !important;
+  color: #e0e0e0 !important;
+}
+html:has(#theme-checkbox:checked) thead th {
+  background: linear-gradient(135deg, #294a75, #1d3556) !important;
+  color: #f1f1f1 !important;
+}
+
+
+html:has(#theme-checkbox:checked) img {
+  filter: none !important;
+}
+
+html:has(#theme-checkbox:checked) .purpose-card:hover,
+html:has(#theme-checkbox:checked) .purpose-card-img:hover,
+html:has(#theme-checkbox:checked) .hero-card:hover,
+html:has(#theme-checkbox:checked) .hero-art:hover,
+html:has(#theme-checkbox:checked) .member-entry:hover,
+html:has(#theme-checkbox:checked) .team-figure:hover,
+html:has(#theme-checkbox:checked) .job-card:hover,
+html:has(#theme-checkbox:checked) .button:hover,
+html:has(#theme-checkbox:checked) button:hover {
+  border-color: rgba(0, 243, 255, 0.8) !important;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.38), 0 0 24px rgba(0, 243, 255, 0.2) !important;
+}
+
+html:has(#theme-checkbox:checked) .button:hover,
+html:has(#theme-checkbox:checked) button:hover {
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
+}
+
+html:not(:has(#theme-checkbox:checked)) .purpose-card:hover,
+html:not(:has(#theme-checkbox:checked)) .purpose-card-img:hover,
+html:not(:has(#theme-checkbox:checked)) .hero-card:hover,
+html:not(:has(#theme-checkbox:checked)) .hero-art:hover,
+html:not(:has(#theme-checkbox:checked)) .member-entry:hover,
+html:not(:has(#theme-checkbox:checked)) .team-figure:hover,
+html:not(:has(#theme-checkbox:checked)) .job-card:hover,
+html:not(:has(#theme-checkbox:checked)) .button:hover,
+html:not(:has(#theme-checkbox:checked)) button:hover {
+  border-color: rgba(0, 243, 255, 0.72) !important;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.3), 0 0 22px rgba(0, 243, 255, 0.14) !important;
+}
+
+html:not(:has(#theme-checkbox:checked)) .button:hover,
+html:not(:has(#theme-checkbox:checked)) button:hover {
+  text-shadow: 0 0 7px rgba(0, 243, 255, 0.55);
+}

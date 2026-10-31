@@ -1,26 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apply for a role with EduTechies.">
   <title>Apply | EduTechies</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles_animation.css">
-  <link rel="stylesheet" href="styles_darkmode.css">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles_animation.css">
+  <link rel="stylesheet" href="../styles/styles_darkmode.css">
   <style>
     .application-form { max-width: 900px; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
+  <header class="site-header glass-panel">
     <div class="header-inner">
       <a class="brand" href="index.html">
-        <img src="./Logoweb.png" width="55">
+        <img src="../images/Logoweb.png" width="55">
         <span class="brand-name">EduTechies</span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav glass-panel" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="jobs.html">Careers</a></li>
@@ -36,17 +36,10 @@
           <label for="theme-checkbox" class="theme-switch"></label>
           <span class="theme-text">DARK🌕</span>
         </div>
-        <div class="language-selector">
-          <label for="language-select">Language</label>
-          <select id="language-select" name="language">
-            <option value="en" selected>🇦🇺 English</option>
-            <option value="vi">🇻🇳 Tiếng Việt</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="fr">🇫🇷 Français</option>
-            <option value="zh">🇨🇳 中文</option>
-            <option value="ja">🇯🇵 日本語</option>
-            <option value="ko">🇰🇷 한국어</option>
-          </select>
+        <div class="language-switch" role="group" aria-label="Choose language">
+          <span class="language-switch-thumb" aria-hidden="true"></span>
+          <a class="language-option" href="apply.html" lang="en" aria-label="English" aria-current="page">🇬🇧</a>
+          <a class="language-option" href="../vi/apply.html" lang="vi" aria-label="Tiếng Việt">🇻🇳</a>
         </div>
       </div>
 
@@ -54,7 +47,7 @@
   </header>
 
   <main id="main" class="page-main">
-    <header class="page-intro">
+    <header class="page-intro glass-panel">
       <p class="eyebrow">Join the team</p>
       <h1>Tell us a little about yourself.</h1>
       <p>Complete the required fields and enter a valid reference from our <a href="jobs.html">current opportunities</a>. You can select any skills that apply.</p>
@@ -62,7 +55,7 @@
 
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
       
-      <fieldset class="form-section">
+      <fieldset class="form-section glass-panel">
 
         <legend>Role and contact details</legend>
 
@@ -256,7 +249,7 @@
         </div>
       </fieldset>
 
-      <fieldset class="form-section skill-fieldset">
+      <fieldset class="form-section glass-panel skill-fieldset">
         <legend>Skills and experience</legend>
         <p class="field-hint">Select any skills that apply.</p>
 
@@ -292,18 +285,18 @@
     </form>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer glass-panel">
     <div class="footer-inner">
       <div>
-        <a class="brand footer-brand" href="index.html"><img src="./Logoweb.png" width="65"><span class="brand-name">EduTechies</span></a>
+        <a class="brand footer-brand" href="index.html"><img src="../images/Logoweb.png" width="65"><span class="brand-name">EduTechies</span></a>
         <p class="footer-tagline">Learning that opens doors.</p>
       </div>
       <div>
         <h2 class="footer-heading">Connect</h2>
         <ul class="footer-links">
-          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog">Jira project</a></li>
-          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project">GitHub repository</a></li>
-          <li><a href="mailto:info@edutechies.com">info@edutechies.com</a></li>
+          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog" target="_blank" rel="noopener noreferrer"><img class="footpics" src="../images/jira-removebg-preview.png" alt="">Jira project</a></li>
+          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project" target="_blank" rel="noopener noreferrer"><img class="footpics" src="../images/png-clipart-github-computer-icons-logo-readme-github-logo-monochrome-removebg-preview.png" alt="">GitHub repository</a></li>
+          <li><a href="mailto:info@edutechies.com"><img class="footpics" src="../images/google-gmail-envelope-vector-symbol-logo-icon-701751694791058rlo6laiga4-removebg-preview.png" alt="">info@edutechies.com</a></li>
         </ul>
       </div>
       <p class="copyright">© 2026 EduTechies. Built for learning.</p>
@@ -313,8 +306,8 @@
     <summary aria-label="Toggle support chat" title="Toggle support chat">
       <span class="support-chat-icon" aria-hidden="true">•••</span>
     </summary>
-    <section class="support-chat-window" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header">
+    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
+      <div class="support-chat-header glass-panel">
         <h2 id="support-chat-heading">EduTechies Support</h2>
         <p>How can we help?</p>
       </div>
