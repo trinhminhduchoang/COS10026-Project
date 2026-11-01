@@ -17,7 +17,7 @@
   <header class="site-header glass-panel">
     <div class="header-inner">
       <a class="brand" href="index.html">
-        <img src="../images/Logoweb.png" width="55">
+        <img src="../images/Logoweb.png" width="55" alt="EduTechies logo">
         <span class="brand-name">EduTechies</span>
       </a>
       <nav class="main-nav glass-panel">
@@ -33,13 +33,13 @@
         <div class="theme-switch-button">
           <span class="theme-text">☀️LIGHT</span>
           <input type="checkbox" id="theme-checkbox">
-          <label for="theme-checkbox" class="theme-switch"></label>
+          <label for="theme-checkbox" class="theme-switch" aria-label="Toggle light or dark mode"></label>
           <span class="theme-text">DARK🌕</span>
         </div>
         <div class="language-switch" role="group" aria-label="Choose language">
           <span class="language-switch-thumb" aria-hidden="true"></span>
-          <a class="language-option" href="index.html" lang="en" aria-label="English" aria-current="page">🇬🇧</a>
-          <a class="language-option" href="../vi/index.html" lang="vi" aria-label="Tiếng Việt">🇻🇳</a>
+          <a class="language-option" href="index.html" lang="en" aria-label="English" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></a>
+          <a class="language-option" href="../vi/index.html" lang="vi" aria-label="Tiếng Việt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg></a>
         </div>
       </div>
     </div>
@@ -114,7 +114,10 @@
       <form class="search-form glass-panel" action="jobs.html" method="get" role="search">
         <label for="job-search">Search open roles</label>
         <div class="search-controls">
-          <input id="job-search" name="q" type="search" placeholder="Try “developer” or “design”">
+          <div class="search-input-wrapper">
+            <svg class="search-input-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+            <input id="job-search" name="q" type="search" placeholder="Try “developer” or “design”">
+          </div>
           <button class="button button-dark" type="submit">Search roles</button>
         </div>
       </form>
@@ -154,10 +157,10 @@
 
     <section class="country-note glass-panel blue-panel" aria-labelledby="country-heading">
       <div class="country-note-inner">
-        <p class="eyebrow">Respect and responsibility</p>
-        <h2 id="country-heading">Learning with respect for Vietnam’s communities and cultures.</h2>
-        <p>Vietnam is home to 54 officially recognised ethnic groups, each with its own histories, knowledge and cultural traditions. We value the many ways communities across the country learn, teach and share knowledge.</p>
-        <p>We aim to work alongside local educators, learners and families to create accessible digital learning that reflects regional needs, supports Vietnamese and other community languages where possible, and respects local knowledge and customs.</p>
+        <p class="eyebrow">Acknowledgement of Country</p>
+        <h2 id="country-heading">We acknowledge the Traditional Custodians of Country.</h2>
+        <p>EduTechies acknowledges the Aboriginal and Torres Strait Islander peoples as the Traditional Custodians of the lands, waters and skies on which we live and work. We pay our respects to Elders past, present and emerging, and recognise their continuing connection to land, culture and community.</p>
+        <p>An Acknowledgement of Country is a way of showing respect for Traditional Custodians and their enduring relationship with their Country. At EduTechies, we believe that respectful, inclusive education starts with honouring the knowledge systems and cultures that have shaped this land for tens of thousands of years. We are committed to creating learning technology that is genuinely inclusive of Aboriginal and Torres Strait Islander learners, educators and communities.</p>
       </div>
     </section>
   </main>
@@ -166,7 +169,7 @@
     <div class="footer-inner">
       <div>
         <a class="brand footer-brand" href="index.html">
-          <img src="../images/Logoweb.png" width="65">
+          <img src="../images/Logoweb.png" width="65" alt="EduTechies logo">
           <span class="brand-name">EduTechies</span>
         </a>
         <p class="footer-tagline">Learning that opens doors.</p>

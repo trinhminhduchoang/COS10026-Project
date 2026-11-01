@@ -126,6 +126,12 @@ html:has(#theme-checkbox:checked) .about-section:has(.member-list) .member-entry
   background-image: linear-gradient(135deg, rgba(104, 145, 197, 0.12), rgba(31, 51, 77, 0.16)) !important;
 }
 
+html:has(#theme-checkbox:checked) .member-entry dd.student-id {
+  border-color: rgba(169, 204, 255, 0.32);
+  color: #c6e0ff !important;
+  background: rgba(25, 43, 64, 0.72);
+}
+
 html:has(#theme-checkbox:checked) .search-form.glass-panel {
   border-color: rgba(215, 232, 255, 0.48) !important;
   background-color: #2b4d7d !important;
@@ -216,6 +222,53 @@ html:has(#theme-checkbox:checked) .skill-grid input[type="checkbox"]:focus-visib
   outline-offset: 3px;
 }
 
+html:has(#theme-checkbox:checked) .gender-field {
+  border-color: rgba(194, 219, 250, 0.24);
+  background: rgba(25, 43, 64, 0.5);
+}
+
+html:has(#theme-checkbox:checked) .choice-row .liquid-radio {
+  border-color: rgba(194, 219, 250, 0.24) !important;
+  background: rgba(25, 43, 64, 0.72) !important;
+  color: #e5e9f0 !important;
+}
+
+html:has(#theme-checkbox:checked) .choice-row .liquid-radio:hover {
+  border-color: rgba(169, 204, 255, 0.72) !important;
+  background: rgba(41, 74, 117, 0.8) !important;
+}
+
+html:has(#theme-checkbox:checked) .choice-row .liquid-radio:has(input[type="radio"]:checked) {
+  border-color: #a9ccff !important;
+  background: #294a75 !important;
+  box-shadow: inset 0 0 0 1px rgba(169, 204, 255, 0.2) !important;
+}
+
+html:has(#theme-checkbox:checked) .liquid-radio .radio-visual {
+  --lightness: 48%;
+
+  border-color: hsla(var(--primary-hue), 55%, 76%, 0.72);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+html:has(#theme-checkbox:checked) .liquid-radio .radio-visual::before {
+  background: radial-gradient(
+    circle at 30% 30%,
+    hsl(var(--primary-hue), 75%, 82%),
+    hsl(var(--secondary-hue), 70%, 68%)
+  );
+}
+
+html:has(#theme-checkbox:checked) .liquid-radio .radio-label,
+html:has(#theme-checkbox:checked) .liquid-radio:hover .radio-label,
+html:has(#theme-checkbox:checked) .liquid-radio input[type="radio"]:checked ~ .radio-label {
+  color: #e5e9f0 !important;
+}
+
+html:has(#theme-checkbox:checked) .liquid-radio input[type="radio"]:focus-visible + .radio-visual {
+  outline-color: #e6f2ff;
+}
+
 html:has(#theme-checkbox:checked) table,
 html:has(#theme-checkbox:checked) th,
 html:has(#theme-checkbox:checked) td {
@@ -228,6 +281,11 @@ html:has(#theme-checkbox:checked) thead th {
   color: #f1f1f1 !important;
 }
 
+html:has(#theme-checkbox:checked) .facts-table tbody th[scope="row"]:hover {
+  background: #376095 !important;
+  color: #ffffff !important;
+  box-shadow: inset 4px 0 #9bcaff, 0 0 12px rgba(115, 181, 255, 0.3);
+}
 
 html:has(#theme-checkbox:checked) img {
   filter: none !important;

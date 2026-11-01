@@ -1,4 +1,4 @@
-﻿/* shared.css: page defaults and accessibility */
+/* shared.css: page defaults and accessibility */
 * {
   box-sizing: border-box;
 }
@@ -89,6 +89,9 @@ textarea:focus-visible {
 
 /* shared.css: header and navigation used across all pages */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-top: 0;
   border-radius: 0 0 18px 18px;
@@ -128,13 +131,13 @@ textarea:focus-visible {
 .language-switch {
   position: relative;
   display: flex;
-  width: 82px;
-  height: 36px;
+  width: 100px;
+  height: 40px;
   align-items: center;
   justify-content: space-between;
   padding: 3px;
   border: 1px solid rgba(255, 255, 255, 0.48);
-  border-radius: 20px;
+  border-radius: 22px;
   background: rgba(15, 38, 69, 0.4);
   box-shadow: inset 0 1px 3px rgba(8, 24, 45, 0.28);
 }
@@ -142,14 +145,23 @@ textarea:focus-visible {
 .language-option {
   z-index: 1;
   display: grid;
-  width: 34px;
-  height: 28px;
-  border-radius: 15px;
+  width: 42px;
+  height: 32px;
+  border-radius: 18px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 1.05rem;
-  line-height: 1;
+  font-size: 1.35rem;
+  line-height: 28px;
   place-items: center;
   text-decoration: none;
+  overflow: hidden;
+}
+
+.language-option svg {
+  display: block;
+  width: 28px;
+  height: 19px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .language-option[aria-current="page"] {
@@ -166,16 +178,16 @@ textarea:focus-visible {
   position: absolute;
   top: 3px;
   left: 3px;
-  width: 34px;
-  height: 28px;
-  border-radius: 15px;
+  width: 42px;
+  height: 32px;
+  border-radius: 18px;
   background: rgb(233, 243, 255);
   box-shadow: 0 2px 6px rgba(5, 23, 48, 0.28);
   transition: transform 180ms ease;
 }
 
 .language-switch.vi .language-switch-thumb {
-  transform: translateX(40px);
+  transform: translateX(49px);
 }
 
 .brand {
@@ -355,11 +367,32 @@ textarea:focus-visible {
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 20px rgba(39, 72, 117, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.28);
+  transition: transform 160ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .button:hover {
   color: rgb(255, 255, 255);
   background: linear-gradient(135deg, rgb(55, 102, 166), rgb(43, 82, 136));
+}
+
+button:not(.button),
+.support-chat > summary,
+.support-chat-message a {
+  transition: transform 160ms ease;
+}
+
+.button:hover,
+button:not(.button):hover,
+.support-chat > summary:hover,
+.support-chat-message a:hover {
+  transform: translateY(-2px);
+}
+
+.button:active,
+button:not(.button):active,
+.support-chat > summary:active,
+.support-chat-message a:active {
+  transform: translateY(1px) scale(0.98);
 }
 
 .button-primary {
@@ -368,6 +401,26 @@ textarea:focus-visible {
 
 .button-dark {
   background: rgb(65, 117, 184);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  button:not(.button),
+  .support-chat > summary,
+  .support-chat-message a {
+    transition: none;
+  }
+
+  .button:hover,
+  button:not(.button):hover,
+  .support-chat > summary:hover,
+  .support-chat-message a:hover,
+  .button:active,
+  button:not(.button):active,
+  .support-chat > summary:active,
+  .support-chat-message a:active {
+    transform: none;
+  }
 }
 
 /* shared.css: tables and horizontal overflow wrapper */
@@ -686,8 +739,30 @@ tbody th {
   gap: 10px;
 }
 
-.search-controls input {
+.search-input-wrapper {
+  position: relative;
   flex: 1;
+  min-width: 0;
+}
+
+.search-input-icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: none;
+  stroke: rgb(83, 99, 109);
+  stroke-linecap: round;
+  stroke-width: 2;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search-controls input {
+  width: 100%;
   outline: none;
 }
 
@@ -823,12 +898,19 @@ tbody th {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
 }
 
 .form-field {
   min-width: 0;
   margin: 10px 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid > .form-field:not(.gender-field) {
+  min-height: 82px;
 }
 
 .vn-field-label {
@@ -839,9 +921,9 @@ tbody th {
 
 .form-field input {
   font-size: 16px;
-  padding: 10px 10px 10px 5px;
+  padding: 22px 10px 8px 5px;
   display: block;
-  width: 200px;
+  width: 100%;
   border: 1px solid rgba(115, 145, 182, 0.28);
   border-radius: 8px;
   color: rgb(29, 44, 69);
@@ -861,7 +943,7 @@ tbody th {
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 10px;
+  top: 12px;
   display: flex;
 }
 
@@ -871,7 +953,9 @@ tbody th {
 }
 
 .form-field .form-input:focus ~ label .form-label-char,
-.form-field .form-input:valid ~ label .form-label-char {
+.form-field .form-input:hover ~ label .form-label-char,
+.form-field .form-input:valid ~ label .form-label-char,
+.reference-field .form-input:not(:placeholder-shown) ~ label .form-label-char {
   transform: translateY(-20px);
   font-size: 14px;
 }
@@ -891,6 +975,26 @@ input, select, textarea {
 .form-field input:not([type="radio"]):not([type="checkbox"]),
 .form-field select {
   width: 100%;
+  height: 56px;
+}
+
+.form-field select {
+  padding: 22px 10px 8px 5px;
+}
+
+.form-field select.form-input:focus ~ .form-select-label,
+.form-field select.form-input:hover ~ .form-select-label,
+.form-field select.form-input:valid ~ .form-select-label {
+  transform: translateY(-20px);
+  font-size: 14px;
+}
+
+.form-field small {
+  display: block;
+  min-height: 1.4em;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: rgb(83, 99, 109);
 }
 
 .form-field input[type="date"] {
@@ -916,10 +1020,15 @@ input, select, textarea {
 .gender-field {
   border: 0;
   grid-column: 1 / -1;
+  padding: 14px;
+  border: 1px solid rgba(115, 145, 182, 0.24);
+  border-radius: 14px;
+  background: rgba(235, 244, 255, 0.28);
 }
 
 .gender-field legend {
   font-weight: bold;
+  padding: 0 6px;
 }
 
 .choice-row,
@@ -969,15 +1078,158 @@ input, select, textarea {
     cursor: pointer;
 }
 
-.choice-row label {
+.choice-row .liquid-radio {
+  --primary-hue: 275;
+  --secondary-hue: 315;
+  --tertiary-hue: 205;
+  --saturation: 48%;
+  --lightness: 86%;
+
+  position: relative;
   display: flex;
+  flex: 1 1 180px;
+  min-height: 52px;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(115, 145, 182, 0.3);
+  border-radius: 10px;
+  background: rgba(235, 244, 255, 0.56);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="radio"]{
-  width: auto;
-  accent-color: rgb(29, 95, 210);
+.liquid-radio.variant-coral {
+  --primary-hue: 15;
+  --secondary-hue: 45;
+  --tertiary-hue: 340;
+}
+
+.liquid-radio.variant-mint {
+  --primary-hue: 150;
+  --secondary-hue: 180;
+  --tertiary-hue: 120;
+}
+
+.liquid-radio:hover {
+  transform: translateY(-2px);
+  border-color: rgba(29, 95, 210, 0.55);
+  background: rgba(220, 235, 255, 0.78);
+}
+
+.choice-row .liquid-radio:has(input[type="radio"]:checked) {
+  border-color: rgb(29, 95, 210);
+  background: rgba(205, 225, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(29, 95, 210, 0.18);
+}
+
+.liquid-radio input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.liquid-radio .radio-visual {
+  position: relative;
+  display: grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 1.4rem;
+  border-radius: 50%;
+  border: 2px solid hsla(var(--primary-hue), 45%, 40%, 0.42);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary-hue), var(--saturation), var(--lightness)),
+    hsl(var(--secondary-hue), var(--saturation), var(--lightness)),
+    hsl(var(--tertiary-hue), var(--saturation), var(--lightness))
+  );
+  box-shadow: 0 3px 8px hsla(var(--primary-hue), 40%, 35%, 0.16), inset 0 2px 4px rgba(255, 255, 255, 0.72);
+  place-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.liquid-radio .radio-visual::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    hsl(var(--primary-hue), 55%, 52%),
+    hsl(var(--secondary-hue), 60%, 38%)
+  );
+  box-shadow: 0 1px 3px hsla(var(--primary-hue), 50%, 25%, 0.32), inset 0 1px 1px rgba(255, 255, 255, 0.48);
+  content: "";
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+}
+
+.liquid-radio .radio-visual::after {
+  position: absolute;
+  z-index: -1;
+  inset: -4px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary-hue), 65%, 68%, 0.45),
+    hsla(var(--secondary-hue), 65%, 68%, 0.28)
+  );
+  content: "";
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.liquid-radio:hover .radio-visual {
+  filter: saturate(1.12);
+  transform: translateY(-1px);
+}
+
+.liquid-radio:hover .radio-visual::after,
+.liquid-radio input[type="radio"]:checked + .radio-visual::after {
+  opacity: 1;
+}
+
+.liquid-radio input[type="radio"]:checked + .radio-visual {
+  border-color: hsla(var(--primary-hue), 55%, 38%, 0.72);
+  box-shadow: 0 4px 10px hsla(var(--primary-hue), 50%, 35%, 0.24), inset 0 2px 4px rgba(255, 255, 255, 0.76);
+}
+
+.liquid-radio input[type="radio"]:checked + .radio-visual::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.liquid-radio input[type="radio"]:focus-visible + .radio-visual {
+  outline: 3px solid rgba(29, 95, 210, 0.5);
+  outline-offset: 3px;
+}
+
+.liquid-radio .radio-label {
+  color: rgb(29, 44, 69);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.liquid-radio:hover .radio-label,
+.liquid-radio input[type="radio"]:checked ~ .radio-label {
+  color: hsl(var(--primary-hue), 42%, 32%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice-row .liquid-radio,
+  .liquid-radio .radio-visual,
+  .liquid-radio .radio-visual::before,
+  .liquid-radio .radio-visual::after,
+  .liquid-radio .radio-label {
+    transition: none;
+  }
 }
 
 .required-note {
@@ -1018,7 +1270,7 @@ input[type="radio"]{
 
 .team-figure figcaption {
   margin-top: 10px;
-  color: rgb(83, 99, 109);
+  color: rgb(244, 248, 255);
   font-size: 0.9rem;
 }
 
@@ -1048,27 +1300,48 @@ input[type="radio"]{
 }
 
 .member-entry dd.student-id {
-  color: rgb(29, 95, 210);
-  font-size: 0.9rem;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 5px 11px;
+  border: 1px solid rgba(29, 95, 210, 0.22);
+  border-radius: 999px;
+  color: rgb(29, 76, 142);
+  background: rgba(215, 232, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
 }
 
 .facts-table {
   min-width: 650px;
-  border: 1px solid rgba(89, 134, 194, 0.24);
+  /* hex border colour matching the inline style on about.html */
+  border: 2px solid #176d56;
 }
 
 .facts-table thead {
-  color: rgb(35, 57, 84);
-  background: rgba(147, 186, 233, 0.42);
+  /* hex colour for header text and background */
+  color: #1b3954;
+  background: #c2d8ee;
+}
+
+.facts-table thead th {
+  /* hex accent on individual header cells */
+  border-bottom: 2px solid #176d56;
 }
 
 .facts-table tbody tr:hover {
-  background: rgba(204, 221, 243, 0.42);
+  background: #d4e5f7;
 }
 
-.facts-table tbody tr:hover th {
-  background: rgba(198, 217, 242, 0.58);
+.facts-table tbody th[scope="row"] {
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.facts-table tbody th[scope="row"]:hover {
+  color: #ffffff;
+  background: #244a78;
+  box-shadow: inset 4px 0 #73b5ff;
 }
 
 .member-photo {
@@ -1304,6 +1577,10 @@ input[type="radio"]{
     width: 100%;
   }
 
+  .search-controls .search-input-wrapper {
+    width: 100%;
+  }
+
   .gender-field {
     grid-column: auto;
   }
@@ -1352,6 +1629,10 @@ input[type="radio"]{
 
 .glass-panel {
   background: linear-gradient(135deg, rgba(220, 238, 255, 0.22), rgba(155, 195, 245, 0.12)) !important;
+}
+
+.team-figure.glass-panel {
+  background: linear-gradient(135deg, rgb(43, 79, 128), rgb(25, 53, 91)) !important;
 }
 
 .site-header.glass-panel {
@@ -1457,7 +1738,7 @@ input[type="radio"]{
 .search-controls input[type="search"] {
   min-width: 0;
   min-height: 48px;
-  padding: 10px 14px;
+  padding: 10px 14px 10px 42px;
   border: 1px solid rgba(255, 255, 255, 0.62);
   border-radius: 8px;
   color: rgb(29, 44, 69);
