@@ -1765,25 +1765,41 @@ html[lang="vi"] .main-nav ul {
   grid-template-columns: 5.5em 6.5em 6em 7.5em;
 }
 
-html[lang="vi"] .main-nav ul:has(> li:nth-child(1) > a[aria-current="page"])::before,
+html[lang="vi"] .main-nav ul:has(> li:nth-child(1) > a[aria-current="page"])::before {
+  left: 0;
+  width: 5.5em;
+}
+
+html[lang="vi"] .main-nav ul:has(> li:nth-child(2) > a[aria-current="page"])::before {
+  left: 5.5em;
+  width: 6.5em;
+}
+
+html[lang="vi"] .main-nav ul:has(> li:nth-child(3) > a[aria-current="page"])::before {
+  left: 12em;
+  width: 6em;
+}
+
+html[lang="vi"] .main-nav ul:has(> li:nth-child(4) > a[aria-current="page"])::before {
+  left: 18em;
+  width: 7.5em;
+}
+
 html[lang="vi"] .main-nav ul:has(> li:nth-child(1) > a:hover, > li:nth-child(1) > a:focus-visible)::before {
   left: 0;
   width: 5.5em;
 }
 
-html[lang="vi"] .main-nav ul:has(> li:nth-child(2) > a[aria-current="page"])::before,
 html[lang="vi"] .main-nav ul:has(> li:nth-child(2) > a:hover, > li:nth-child(2) > a:focus-visible)::before {
   left: 5.5em;
   width: 6.5em;
 }
 
-html[lang="vi"] .main-nav ul:has(> li:nth-child(3) > a[aria-current="page"])::before,
 html[lang="vi"] .main-nav ul:has(> li:nth-child(3) > a:hover, > li:nth-child(3) > a:focus-visible)::before {
   left: 12em;
   width: 6em;
 }
 
-html[lang="vi"] .main-nav ul:has(> li:nth-child(4) > a[aria-current="page"])::before,
 html[lang="vi"] .main-nav ul:has(> li:nth-child(4) > a:hover, > li:nth-child(4) > a:focus-visible)::before {
   left: 18em;
   width: 7.5em;
