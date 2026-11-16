@@ -1,13 +1,20 @@
-﻿<!doctype html>
+﻿<?php 
+session_start(); 
+if (!isset($_SESSION['user_id'])) { 
+    header("Location: login.php"); 
+    exit(); 
+} 
+?>
+<!doctype html>
 <html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apply for a role with EduTechies.">
   <title>Apply | EduTechies</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/styles_animation.css">
-  <link rel="stylesheet" href="styles/styles_darkmode.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles_animation.css">
+    <link rel="stylesheet" href="./styles/styles_darkmode.css">
   <style>
     .application-form { max-width: 900px; }
   </style>
@@ -16,16 +23,16 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header glass-panel">
     <div class="header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index_en.php">
         <img src="images/Logoweb.png" width="55" alt="EduTechies logo">
         <span class="brand-name">EduTechies</span>
       </a>
       <nav class="main-nav glass-panel" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="jobs.html">Careers</a></li>
-          <li><a aria-current="page" href="apply.html">Apply</a></li>
-          <li><a href="about.html">About our team</a></li>
+          <li><a href="index_en.php">Home</a></li>
+          <li><a href="jobs_en.php">Careers</a></li>
+          <li><a aria-current="page" href="apply_en.php">Apply</a></li>
+          <li><a href="about_en.php">About our team</a></li>
         </ul>
       </nav>
       <div class="header-controls">
@@ -38,9 +45,13 @@
         </div>
         <div class="language-switch" role="group" aria-label="Choose language">
           <span class="language-switch-thumb" aria-hidden="true"></span>
-          <a class="language-option" href="apply.html" lang="en" aria-label="English" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></a>
-          <a class="language-option" href="vi/apply.html" lang="vi" aria-label="Tiếng Việt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg></a>
+          <a class="language-option" href="apply_en.php" lang="en" aria-label="English" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></a>
+          <a class="language-option" href="apply_vi.php" lang="vi" aria-label="Tiếng Việt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg></a>
         </div>
+                        <div class="user-welcome" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 14px;">
+                    <span style="color: #1e3a8a; font-weight: 500;">Hello, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
+                    <a href="logout.php" style="color: #dc3545; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Logout</a>
+                </div>
       </div>
 
     </div>
@@ -50,7 +61,7 @@
     <header class="page-intro glass-panel">
       <p class="eyebrow">Join the team</p>
       <h1>Tell us a little about yourself.</h1>
-      <p>Complete the required fields and enter a valid reference from our <a href="jobs.html">current opportunities</a>. You can select any skills that apply.</p>
+      <p>Complete the required fields and enter a valid reference from our <a href="jobs_en.php">current opportunities</a>. You can select any skills that apply.</p>
     </header>
 
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
@@ -300,7 +311,7 @@
   <footer class="site-footer glass-panel">
     <div class="footer-inner">
       <div>
-        <a class="brand footer-brand" href="index.html"><img src="images/Logoweb.png" width="65" alt="EduTechies logo"><span class="brand-name">EduTechies</span></a>
+        <a class="brand footer-brand" href="index_en.php"><img src="images/Logoweb.png" width="65" alt="EduTechies logo"><span class="brand-name">EduTechies</span></a>
         <p class="footer-tagline">Learning that opens doors.</p>
       </div>
       <div>

@@ -1,0 +1,184 @@
+﻿<?php 
+session_start(); 
+if (!isset($_SESSION['user_id'])) { 
+    header("Location: login.php"); 
+    exit(); 
+} 
+?>
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduTechies phát triển các công cụ và nền tảng học tập số dễ tiếp cận cho giáo dục.">
+    <title>EduTechies | Mở rộng cánh cửa học tập</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles_animation.css">
+    <link rel="stylesheet" href="./styles/styles_darkmode.css">
+    <style>
+        .hero-copy { max-width: 560px; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Chuyển đến nội dung chính</a>
+    
+    <header class="site-header glass-panel">
+        <div class="header-inner">
+            <a class="brand" href="index_vi.php">
+                <img src="./images/Logoweb.png" width="55" alt="">
+                <span class="brand-name">EduTechies</span>
+            </a>
+            
+            <nav class="main-nav glass-panel" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a aria-current="page" href="index_vi.php">Trang chủ</a></li>
+                    <li><a href="jobs_vi.php">Tuyển dụng</a></li>
+                    <li><a href="apply_vi.php">Ứng tuyển</a></li>
+                    <li><a href="about_vi.php">Về chúng tôi</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <div class="theme-switch-button">
+                    <span class="theme-text">☀️SÁNG</span>
+                    <input type="checkbox" id="theme-checkbox">
+                    <label for="theme-checkbox" class="theme-switch" aria-label="Chuyển chế độ sáng hoặc tối"></label>
+                    <span class="theme-text">TỐI🌕</span>
+                </div>
+                
+                <div class="language-switch vi" role="group" aria-label="Chọn ngôn ngữ">
+                    <span class="language-switch-thumb" aria-hidden="true"></span>
+                    <a class="language-option" href="index_en.php" lang="en" aria-label="English">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg>
+                    </a>
+                    <a class="language-option" href="index_vi.php" lang="vi" aria-label="Tiếng Việt" aria-current="page">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg>
+                    </a>
+                </div>
+
+                <!-- HIỂN THỊ TÊN VÀ ĐĂNG XUẤT -->
+                <div class="user-welcome" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 14px;">
+                    <span style="color: #1e3a8a; font-weight: 500;">Xin chào, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
+                    <a href="logout.php" style="color: #dc3545; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero-copy hero-card glass-panel">
+                <p class="eyebrow">Công nghệ vì việc học tốt hơn</p>
+                <h1>Để việc học mở ra cơ hội cho mọi người.</h1>
+                <p class="hero-lede">Chúng tôi xây dựng các công cụ số thiết thực, hỗ trợ giáo viên giảng dạy và giúp mỗi người học tiến bộ theo cách phù hợp với mình.</p>
+                <p>EduTechies là một doanh nghiệp công nghệ giáo dục phát triển nền tảng học tập dễ tiếp cận và tài nguyên trực tuyến hữu ích. Chúng tôi kết hợp thiết kế, phần mềm và giáo dục để việc học số trở nên rõ ràng, toàn diện và hấp dẫn hơn.</p>
+                <a class="button button-primary" href="jobs.html">Xem vị trí đang tuyển</a>
+            </div>
+            <div class="hero-art hero-card glass-panel">
+                <img class="hero-image" src="./images/images.jfif" width="640" height="480" alt="Minh họa người học sử dụng nền tảng học tập số EduTechies" style="border-radius: 12px;"><br>
+                <p class="art-caption">Khơi gợi tò mò bằng công nghệ hữu ích.</p>
+            </div>
+        </section>
+
+        <section class="section section-narrow glass-panel purpose-intro blue-panel">
+            <div class="section-heading">
+                <p class="eyebrow">Mục tiêu của chúng tôi</p>
+                <h2>Công nghệ hữu ích. Giá trị thiết thực.</h2>
+                <p>Chúng tôi xây dựng công cụ học tập số cho lớp học đa dạng tại Việt Nam, quan tâm đến nhu cầu học tập khác nhau, khả năng truy cập Internet và ngôn ngữ, trải nghiệm của người học địa phương.</p>
+            </div>
+        </section>
+
+        <section class="purpose-list" aria-label="Các nguyên tắc của chúng tôi">
+            <article class="purpose-row">
+                <div class="purpose-card glass-panel">
+                    <span class="purpose-number" aria-hidden="true">01</span>
+                    <h3>Thiết kế dễ tiếp cận</h3>
+                    <p>Chúng tôi chú trọng khả năng tiếp cận để nhiều người có thể tự tin tham gia học tập.</p>
+                </div>
+                <div class="purpose-card-img glass-panel">
+                    <img class="purpose-img" src="./images/purpose_1.jpg" alt="Học sinh cùng học tập trong một lớp học hòa nhập.">
+                </div>
+            </article>
+            <article class="purpose-row">
+                <div class="purpose-card-img glass-panel blue-panel">
+                    <img class="purpose-img" src="./images/purpose_2.jpg" alt="Giáo viên hướng dẫn học sinh sử dụng máy tính.">
+                </div>
+                <div class="purpose-card glass-panel blue-panel">
+                    <span class="purpose-number" aria-hidden="true">02</span>
+                    <h3>Cùng xây dựng với giáo viên</h3>
+                    <p>Chúng tôi lắng nghe người dạy và người học trước khi quyết định công nghệ nên giải quyết vấn đề gì.</p>
+                </div>
+            </article>
+            <article class="purpose-row">
+                <div class="purpose-card glass-panel">
+                    <span class="purpose-number" aria-hidden="true">03</span>
+                    <h3>Không ngừng học hỏi</h3>
+                    <p>Chúng tôi thử nghiệm, cải tiến và tiếp tục tìm cách giúp việc học số hiệu quả hơn cho mọi người.</p>
+                </div>
+                <div class="purpose-card-img glass-panel">
+                    <img class="purpose-img" src="./images/purpose_3.jpg" alt="Nhóm đồng nghiệp cùng trao đổi ý tưởng trong một dự án số.">
+                </div>
+            </article>
+        </section>
+
+        <section class="section roles-section glass-panel blue-panel" aria-labelledby="roles-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Cùng chúng tôi phát triển</p>
+                <h2 id="roles-heading">Nơi bắt đầu cho ý tưởng tiếp theo của bạn.</h2>
+                <p>Chúng tôi tìm kiếm những người quan tâm đến chất lượng, tinh thần hợp tác và trải nghiệm học tập tốt hơn.</p>
+            </div>
+            <form class="search-form glass-panel" action="jobs.html" method="get" role="search">
+                <label for="job-search">Tìm vị trí phù hợp</label>
+                <div class="search-controls">
+                    <div class="search-input-wrapper">
+                        <svg class="search-input-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+                        <input id="job-search" name="q" type="search" placeholder="Thử “lập trình” hoặc “thiết kế”">
+                    </div>
+                    <button class="button button-dark" type="submit">Tìm kiếm</button>
+                </div>
+            </form>
+            <p class="role-link"><a href="jobs.html">Xem tất cả vị trí đang tuyển <span aria-hidden="true">→</span></a></p>
+        </section>
+
+        <section class="section section-narrow glass-panel" aria-labelledby="approach-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Cách chúng tôi làm việc</p>
+                <h2 id="approach-heading">Đội ngũ gắn kết, chung mục tiêu.</h2>
+                <p>Công việc của chúng tôi kết nối con người, phương pháp và công cụ để tạo nên trải nghiệm học tập hỗ trợ tốt hơn.</p>
+            </div>
+            <div class="table-wrap glass-panel">
+                <table class="purpose-table">
+                    <caption>Cách công việc của chúng tôi hỗ trợ người học và giáo viên</caption>
+                    <thead>
+                        <tr><th scope="col">Đối tượng đồng hành</th><th scope="col">Sản phẩm tạo ra</th><th scope="col">Giá trị mang lại</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">Cộng đồng giáo dục</th>
+                            <td>Nền tảng học tập dễ tiếp cận</td>
+                            <td rowspan="2">Việc học trực tuyến toàn diện và hấp dẫn hơn</td>
+                        </tr>
+                        <tr><td>Tài nguyên số thiết thực</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="country-note glass-panel blue-panel" aria-labelledby="country-heading">
+            <div class="country-note-inner">
+                <p class="eyebrow">Công nhận Đất nước Bản địa</p>
+                <h2 id="country-heading">Chúng tôi công nhận các Người Gìn Giữ Truyền Thống của Đất nước.</h2>
+                <p>EduTechies công nhận các dân tộc bản địa Aboriginal và Torres Strait Islander là Người Gìn Giữ Truyền Thống của các vùng đất, nguồn nước và bầu trời nơi chúng tôi sinh sống và làm việc. Chúng tôi bày tỏ sự tôn trọng đối với các Bậc Trưởng Lão quá khứ, hiện tại và tương lai, đồng thời ghi nhận mối gắn kết bền vững của họ với đất đai, văn hóa và cộng đồng.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer glass-panel">
+        <div class="footer-inner">
+            <div>
+                <a class="brand footer-brand" href="index_vi.php"><img src="./images/Logoweb.png" width="65" alt=""><span class="brand-name">EduTechies</span></a>
+                <p class="footer-tagline">Mở rộng cánh cửa học tập.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Kết nối</h2>
+                <ul class="footer-
