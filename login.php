@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $selected_lang = $_POST['language'];
 
     if (empty($user) || empty($pass)) {
-        $error = "Vui lòng nhập tên đăng nhập và mật khẩu!";
+        $error = "Please enter a username and password.";
     } else {
         $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
         $stmt = $conn->prepare($sql);
@@ -40,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
                 exit();
             } else {
-                $error = "Mật khẩu không chính xác!";
+                $error = "Invalid password. Please try again.";
             }
         } else {
-            $error = "Tài khoản không tồn tại!";
+            $error = "Invalid username or email. Please try again.";
         }
     }
 }
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - EduTechies</title>
+    <title>Login - EduTechies</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <style>
         body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f4f8; margin: 0; }
@@ -70,32 +70,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="auth-card">
-        <h2>Đăng Nhập</h2>
+        <h2>Login</h2>
         
         <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
         
         <form action="login.php" method="POST">
             <div class="form-group">
-                <label>Tên đăng nhập hoặc Email</label>
+                <label>Username or Email</label>
                 <input type="text" name="username" required>
             </div>
             <div class="form-group">
-                <label>Mật khẩu</label>
+                <label>Password</label>
                 <input type="password" name="password" required>
             </div>
-            <!-- Lựa chọn ngôn ngữ -->
-            <div class="form-group">
-                <label>Chọn ngôn ngữ / Language</label>
-                <select name="language">
-                    <option value="vi">Tiếng Việt</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-submit">Đăng nhập</button>
+            <button type="submit" class="btn-submit">Login</button>
         </form>
         
         <div class="link-text">
-            Chưa có tài khoản? <a href="signup.php">Đăng ký ngay</a>
+            No account? <a href="signup.php">Sign up now</a>
         </div>
     </div>
 </body>

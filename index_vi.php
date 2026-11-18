@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_id'])) {
                     <li><a href="jobs_vi.php">Tuyển dụng</a></li>
                     <li><a href="apply_vi.php">Ứng tuyển</a></li>
                     <li><a href="about_vi.php">Về chúng tôi</a></li>
-                </ul>
+                </ul>                                                                   
             </nav>
             
             <div class="header-controls">
