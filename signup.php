@@ -5,14 +5,21 @@ session_start();
 $error = "";
 $success = "";
 
+// PHẢI CÓ ĐOẠN NÀY ĐỂ NHẬN DỮ LIỆU KHI NGƯỜI DÙNG BẤM NÚT SIGNUP
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = trim($_POST['username']);
     $email = trim($_POST['email']);
     $pass = $_POST['password'];
 
+    // 1. Kiểm tra không để trống
     if (empty($user) || empty($email) || empty($pass)) {
-        $error = "Please fill in the information!";
-    } else {
+        $error = "Vui lòng điền đầy đủ thông tin!";
+    } 
+    // 2. Kiểm tra điều kiện tên đăng nhập (3-16 ký tự, không chứa khoảng trắng hoặc ký tự đặc biệt)
+    elseif (!preg_match('/^[a-zA-Z0-9]{3,16}$/', $user)) {
+        $error = "Tên đăng nhập phải từ 3-16 ký tự và không được chứa khoảng trắng hoặc ký tự đặc biệt!";
+    } 
+    else {
         // Kiểm tra xem tên đăng nhập hoặc email đã tồn tại chưa
         $sql = "SELECT id FROM users WHERE username = ? OR email = ?";
         $stmt = $conn->prepare($sql);
@@ -71,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="signup.php" method="POST">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" required>
+                <input type="text" name="username" minlength="3" maxlength="16" pattern="[a-zA-Z0-9]+" title="Usernames must be between 3 and 16 characters and must not contain spaces or special characters!" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
