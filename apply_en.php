@@ -4,31 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit(); 
 } 
-?>
-<!doctype html>
-<html lang="en-AU">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Apply for a role with EduTechies.">
-  <title>Apply | EduTechies</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/styles_animation.css">
-    <link rel="stylesheet" href="./styles/styles_darkmode.css">
-  <style>
-    .application-form { max-width: 900px; }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <?php include __DIR__ . '/header_en.inc'; ?>
 
-  <main id="main" class="page-main">
-    <header class="page-intro glass-panel">
-      <p class="eyebrow">Join the team</p>
-      <h1>Tell us a little about yourself.</h1>
-      <p>Complete the required fields and enter a valid reference from our <a href="jobs_en.php">current opportunities</a>. You can select any skills that apply.</p>
-    </header>
+include 'header_en.inc';
+?>
 
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
       
@@ -274,21 +252,6 @@ if (!isset($_SESSION['user_id'])) {
     </form>
   </main>
 
-  <?php include __DIR__ . '/footer_en.inc'; ?>
-  <details class="support-chat">
-    <summary aria-label="Toggle support chat" title="Toggle support chat">
-      <span class="support-chat-icon" aria-hidden="true">•••</span>
-    </summary>
-    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header glass-panel">
-        <h2 id="support-chat-heading">EduTechies Support</h2>
-        <p>How can we help?</p>
-      </div>
-      <div class="support-chat-message">
-        <p>Thanks for reaching out. Send our team an email and we’ll be happy to help.</p>
-        <a href="mailto:info@edutechies.com">Email Support</a>
-      </div>
-    </section>
-  </details>
-</body>
-</html>
+<?php
+include 'footer_en.inc';
+?>

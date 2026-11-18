@@ -3,25 +3,10 @@ session_start();
 if (!isset($_SESSION['user_id'])) { 
     header("Location: login.php"); 
     exit(); 
-} 
+}
+
+include 'header_en.inc';
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Meet the Quadro Techies team behind EduTechies.">
-  <title>About our team | EduTechies</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/styles_animation.css">
-    <link rel="stylesheet" href="./styles/styles_darkmode.css">
-  <style>
-    .member-entry dt { color: #173544; }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <?php include __DIR__ . '/header_en.inc'; ?>
 
   <main id="main" class="page-main">
     <header class="page-intro glass-panel">
@@ -118,21 +103,6 @@ if (!isset($_SESSION['user_id'])) {
     </section>
   </main>
 
-  <?php include __DIR__ . '/footer_en.inc'; ?>
-  <details class="support-chat">
-    <summary aria-label="Toggle support chat" title="Toggle support chat">
-      <span class="support-chat-icon" aria-hidden="true">•••</span>
-    </summary>
-    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header glass-panel">
-        <h2 id="support-chat-heading">EduTechies Support</h2>
-        <p>How can we help?</p>
-      </div>
-      <div class="support-chat-message">
-        <p>Thanks for reaching out. Send our team an email and we’ll be happy to help.</p>
-        <a href="mailto:info@edutechies.com">Email Support</a>
-      </div>
-    </section>
-  </details>
-</body>
-</html>
+<?php
+include 'footer_en.inc';
+?>

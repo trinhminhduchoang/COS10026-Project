@@ -4,31 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit(); 
 } 
-?>
-<!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ứng tuyển vào một vị trí tại EduTechies.">
-  <title>Ứng tuyển | EduTechies</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/styles_animation.css">
-    <link rel="stylesheet" href="./styles/styles_darkmode.css">
-  <style>
-    .application-form { max-width: 900px; }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Chuyển đến nội dung chính</a>
-  <?php include __DIR__ . '/header_vi.inc'; ?>
 
-  <main id="main" class="page-main">
-    <header class="page-intro glass-panel">
-      <p class="eyebrow">Gia nhập đội ngũ</p>
-      <h1>Hãy chia sẻ đôi điều về bạn.</h1>
-      <p>Điền các mục bắt buộc và nhập mã tham chiếu công việc từ <a href="jobs_vi.php">các vị trí đang tuyển</a>. Bạn có thể chọn tất cả kỹ năng phù hợp.</p>
-    </header>
+include 'header_vi.inc';
+?>
 
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" enctype="multipart/form-data">
       <fieldset class="form-section glass-panel">
@@ -243,13 +221,6 @@ if (!isset($_SESSION['user_id'])) {
     </form>
   </main>
 
-  <?php include __DIR__ . '/footer_vi.inc'; ?>
-  <details class="support-chat">
-    <summary aria-label="Bật/tắt trò chuyện hỗ trợ" title="Bật/tắt trò chuyện hỗ trợ"><span class="support-chat-icon" aria-hidden="true">•••</span></summary>
-    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header glass-panel"><h2 id="support-chat-heading">Bộ phận hỗ trợ EduTechies</h2><p>Chúng tôi có thể giúp gì cho bạn?</p></div>
-      <div class="support-chat-message"><p>Cảm ơn bạn đã liên hệ. Hãy gửi email cho đội ngũ của chúng tôi; chúng tôi rất sẵn lòng giúp bạn.</p><a href="mailto:info@edutechies.com">Liên hệ hỗ trợ qua email</a></div>
-    </section>
-  </details>
-</body>
-</html>
+<?php
+include 'footer_vi.inc';
+?>
