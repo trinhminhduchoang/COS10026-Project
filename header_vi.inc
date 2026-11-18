@@ -24,10 +24,10 @@
             
             <nav class="main-nav glass-panel" aria-label="Điều hướng chính">
                 <ul>
-                    <li><a aria-current="page" href="index_vi.php">Trang chủ</a></li>
-                    <li><a href="jobs_vi.php">Tuyển dụng</a></li>
-                    <li><a href="apply_vi.php">Ứng tuyển</a></li>
-                    <li><a href="about_vi.php">Về chúng tôi</a></li>
+                    <li><a href="index_vi.php" <?php echo ($active_page == 'home') ? 'aria-current="page"' : ''; ?>>Trang chủ</a></li>
+                    <li><a href="jobs_vi.php" <?php echo ($active_page == 'careers') ? 'aria-current="page"' : ''; ?>>Tuyển dụng</a></li>
+                    <li><a href="apply_vi.php" <?php echo ($active_page == 'apply') ? 'aria-current="page"' : ''; ?>>Ứng tuyển</a></li>
+                    <li><a href="about_vi.php" <?php echo ($active_page == 'about') ? 'aria-current="page"' : ''; ?>>Về chúng tôi</a></li>
                 </ul>
             </nav>
             
