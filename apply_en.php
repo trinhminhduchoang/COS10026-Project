@@ -50,7 +50,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
                         <div class="user-welcome" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 14px;">
                     <span style="color: #1e3a8a; font-weight: 500;">Hello, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
-                    <a href="logout.php" style="color: #dc3545; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Logout</a>
+                    <a href="logout.php" style="color: #dc3545 !important; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Logout</a>
                 </div>
       </div>
 
