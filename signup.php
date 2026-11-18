@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password'];
 
     if (empty($user) || empty($email) || empty($pass)) {
-        $error = "Vui lòng điền đầy đủ thông tin!";
+        $error = "Please fill in the information!";
     } else {
         // Kiểm tra xem tên đăng nhập hoặc email đã tồn tại chưa
         $sql = "SELECT id FROM users WHERE username = ? OR email = ?";
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $error = "Tên đăng nhập hoặc email đã tồn tại!";
+            $error = "Username or email has already been used!";
         } else {
             // Mã hóa mật khẩu bảo mật
             $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insert_stmt->bind_param("sss", $user, $email, $hashed_password);
 
             if ($insert_stmt->execute()) {
-                $success = "Đăng ký thành công! <a href='login.php'>Đăng nhập ngay</a>";
+                $success = "Signed up successfully <a href='login.php'>Login now</a>";
             } else {
-                $error = "Đã có lỗi xảy ra, vui lòng thử lại.";
+                $error = "An error has occured, please try again.";
             }
         }
     }
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký - EduTechies</title>
+    <title>Signup - EduTechies</title>
 
     <link rel="stylesheet" href="./styles/styles.css">
     <style>
@@ -63,14 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="auth-card">
-        <h2>Đăng Ký Tài Khoản</h2>
+        <h2>Account Signup</h2>
         
         <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
         <?php if (!empty($success)) echo "<div class='success'>$success</div>"; ?>
         
         <form action="signup.php" method="POST">
             <div class="form-group">
-                <label>Tên đăng nhập</label>
+                <label>Username</label>
                 <input type="text" name="username" required>
             </div>
             <div class="form-group">
@@ -78,14 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="email" name="email" required>
             </div>
             <div class="form-group">
-                <label>Mật khẩu</label>
+                <label>Password</label>
                 <input type="password" name="password" required>
             </div>
-            <button type="submit" class="btn-submit">Đăng ký</button>
+            <button type="submit" class="btn-submit">Signup</button>
         </form>
         
         <div class="link-text">
-            Đã có tài khoản? <a href="login.php">Đăng nhập ngay</a>
+            Already have an account? <a href="login.php">Login now</a>
         </div>
     </div>
 </body>
