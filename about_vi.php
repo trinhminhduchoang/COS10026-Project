@@ -4,53 +4,9 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit(); 
 } 
+
+include 'header_vi.inc';
 ?>
-<!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gặp gỡ đội ngũ Quadro Techies đứng sau EduTechies.">
-  <title>Về đội ngũ | EduTechies</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/styles_animation.css">
-    <link rel="stylesheet" href="./styles/styles_darkmode.css">
-  <style>
-    .member-entry dt { color: #173544; }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Chuyển đến nội dung chính</a>
-  <header class="site-header glass-panel">
-    <div class="header-inner">
-      <a class="brand" href="index_vi.php"><img src="./images/Logoweb.png" width="55" alt=""><span class="brand-name">EduTechies</span></a>
-      <nav class="main-nav glass-panel" aria-label="Điều hướng chính">
-        <ul>
-          <li><a href="index_vi.php">Trang chủ</a></li>
-          <li><a href="jobs_vi.php">Tuyển dụng</a></li>
-          <li><a href="apply_vi.php">Ứng tuyển</a></li>
-          <li><a aria-current="page" href="about_vi.php">Về chúng tôi</a></li>
-        </ul>
-      </nav>
-      <div class="header-controls">
-        <div class="theme-switch-button">
-          <span class="theme-text">☀️SÁNG</span>
-          <input type="checkbox" id="theme-checkbox">
-          <label for="theme-checkbox" class="theme-switch" aria-label="Chuyển chế độ sáng hoặc tối"></label>
-          <span class="theme-text">TỐI🌕</span>
-        </div>
-        <div class="language-switch vi" role="group" aria-label="Chọn ngôn ngữ">
-          <span class="language-switch-thumb" aria-hidden="true"></span>
-          <a class="language-option" href="about_en.php" lang="en" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></a>
-          <a class="language-option" href="about_vi.php" lang="vi" aria-label="Tiếng Việt" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg></a>
-        </div>
-                        <div class="user-welcome" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 14px;">
-                    <span style="color: #1e3a8a; font-weight: 500;">Xin chào, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
-                    <a href="logout.php" style="color: #dc3545 !important; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Đăng xuất</a>
-                </div>
-      </div>
-    </div>
-  </header>
 
   <main id="main" class="page-main">
     <header class="page-intro glass-panel">
@@ -145,29 +101,6 @@ if (!isset($_SESSION['user_id'])) {
     </section>
   </main>
 
-  <footer class="site-footer glass-panel">
-    <div class="footer-inner">
-      <div>
-        <a class="brand footer-brand" href="index_.vi.php"><img src="./images/Logoweb.png" width="65" alt=""><span class="brand-name">EduTechies</span></a>
-        <p class="footer-tagline">Mở rộng cánh cửa học tập.</p>
-      </div>
-      <div>
-        <h2 class="footer-heading">Kết nối</h2>
-        <ul class="footer-links">
-          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog" target="_blank" rel="noopener noreferrer"><img class="footpics" src="./images/jira-removebg-preview.png" alt="">Dự án Jira</a></li>
-          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project" target="_blank" rel="noopener noreferrer"><img class="footpics" src="./images/png-clipart-github-computer-icons-logo-readme-github-logo-monochrome-removebg-preview.png" alt="">Kho mã GitHub</a></li>
-          <li><a href="mailto:info@edutechies.com"><img class="footpics" src="./images/google-gmail-envelope-vector-symbol-logo-icon-701751694791058rlo6laiga4-removebg-preview.png" alt="">info@edutechies.com</a></li>
-        </ul>
-      </div>
-      <p class="copyright">© 2026 EduTechies. Cùng xây dựng tương lai học tập.</p>
-    </div>
-  </footer>
-  <details class="support-chat">
-    <summary aria-label="Mở hoặc đóng hỗ trợ" title="Mở hoặc đóng hỗ trợ"><span class="support-chat-icon" aria-hidden="true">•••</span></summary>
-    <section class="support-chat-window glass-panel" aria-labelledby="support-chat-heading">
-      <div class="support-chat-header glass-panel"><h2 id="support-chat-heading">Hỗ trợ EduTechies</h2><p>Chúng tôi có thể giúp gì cho bạn?</p></div>
-      <div class="support-chat-message"><p>Cảm ơn bạn đã liên hệ. Hãy gửi email cho đội ngũ của chúng tôi, chúng tôi sẵn sàng hỗ trợ.</p><a href="mailto:info@edutechies.com">Gửi email hỗ trợ</a></div>
-    </section>
-  </details>
-</body>
-</html>
+<?php
+include 'footer_vi.inc';
+?>
