@@ -21,40 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header glass-panel">
-    <div class="header-inner">
-      <a class="brand" href="index_en.php">
-        <img src="images/Logoweb.png" width="55" alt="EduTechies logo">
-        <span class="brand-name">EduTechies</span>
-      </a>
-      <nav class="main-nav glass-panel" aria-label="Main navigation">
-        <ul>
-          <li><a href="index_en.php">Home</a></li>
-          <li><a aria-current="page" href="jobs_en.php">Careers</a></li>
-          <li><a href="apply_en.php">Apply</a></li>
-          <li><a href="about_en.php">About our team</a></li>
-        </ul>
-      </nav>
-      <div class="header-controls">
-        <!-- Dark/Light mode switch button -->
-        <div class="theme-switch-button">
-          <span class="theme-text">☀️LIGHT</span>
-          <input type="checkbox" id="theme-checkbox">
-          <label for="theme-checkbox" class="theme-switch"></label>
-          <span class="theme-text">DARK🌕</span>
-        </div>
-        <div class="language-switch" role="group" aria-label="Choose language">
-          <span class="language-switch-thumb" aria-hidden="true"></span>
-          <a class="language-option" href="jobs_en.php" lang="en" aria-label="English" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="14"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></a>
-          <a class="language-option" href="jobs_vi.php" lang="vi" aria-label="Tiếng Việt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="28" height="19" role="img" aria-hidden="true"><rect width="60" height="40" fill="#da251d"/><polygon points="30,9 32.9,18 42.3,18 35,23.4 37.6,32.5 30,27.2 22.4,32.5 25,23.4 17.7,18 27.1,18" fill="#ff0"/></svg></a>
-        </div>
-                        <div class="user-welcome" style="display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 14px;">
-                    <span style="color: #1e3a8a; font-weight: 500;">Hello, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
-                    <a href="logout.php" style="color: #dc3545; text-decoration: none; font-weight: bold; padding: 4px 10px; background: #fee2e2; border-radius: 4px;">Logout</a>
-                </div>
-      </div>
-    </div>
-  </header>
+  <?php include __DIR__ . '/header_en.inc'; ?>
 
   <main id="main" class="page-main" style="padding-top: 24px;">
     <header class="page-intro glass-panel">
@@ -258,23 +225,7 @@ if (!isset($_SESSION['user_id'])) {
     </section>
   </main>
 
-  <footer class="site-footer glass-panel">
-    <div class="footer-inner">
-      <div>
-        <a class="brand footer-brand" href="index_en.php"><img src="images/Logoweb.png" width="65" alt="EduTechies logo"><span class="brand-name">EduTechies</span></a>
-        <p class="footer-tagline">Learning that opens doors.</p>
-      </div>
-      <div>
-        <h2 class="footer-heading">Connect</h2>
-        <ul class="footer-links">
-          <li><a href="https://student-team-qh8y65xe.atlassian.net/jira/software/projects/WEBPROJECT/boards/2/backlog" target="_blank" rel="noopener noreferrer"><img class="footpics" src="images/jira-removebg-preview.png" alt="">Jira project</a></li>
-          <li><a href="https://github.com/trinhminhduchoang/COS10026-Project" target="_blank" rel="noopener noreferrer"><img class="footpics" src="images/png-clipart-github-computer-icons-logo-readme-github-logo-monochrome-removebg-preview.png" alt="">GitHub repository</a></li>
-          <li><a href="mailto:info@edutechies.com"><img class="footpics" src="images/google-gmail-envelope-vector-symbol-logo-icon-701751694791058rlo6laiga4-removebg-preview.png" alt="">info@edutechies.com</a></li>
-        </ul>
-      </div>
-      <p class="copyright">© 2026 EduTechies. Built for learning.</p>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/footer_en.inc'; ?>
   <details class="support-chat">
     <summary aria-label="Toggle support chat" title="Toggle support chat">
       <span class="support-chat-icon" aria-hidden="true">•••</span>

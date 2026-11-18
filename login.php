@@ -7,8 +7,6 @@ $error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = trim($_POST['username']);
     $pass = $_POST['password'];
-    $selected_lang = $_POST['language'];
-
     if (empty($user) || empty($pass)) {
         $error = "Please enter a username and password.";
     } else {
@@ -25,19 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
-                $_SESSION['lang'] = $selected_lang;
-
-                
-                $update_lang = $conn->prepare("UPDATE users SET language = ? WHERE id = ?");
-                $update_lang->bind_param("si", $selected_lang, $row['id']);
-                $update_lang->execute();
-
-                
-            if ($selected_lang == 'en') {
                 header("Location:index_en.php");
-            } else {
-                header("Location:index_vi.php");
-            }
                 exit();
             } else {
                 $error = "Invalid password. Please try again.";
@@ -61,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .auth-card h2 { text-align: center; color: #1e3a8a; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
-        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
         .btn-submit { width: 100%; padding: 10px; background: #1e3a8a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
         .btn-submit:hover { background: #1d4ed8; }
         .error { color: #dc3545; background: #f8d7da; padding: 8px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; text-align: center; }
