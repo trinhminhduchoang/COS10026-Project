@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit(); 
 }
-
+$active_page = 'home';
 include 'header_vi.inc';
 ?>
 

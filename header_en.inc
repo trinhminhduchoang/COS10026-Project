@@ -22,12 +22,12 @@
                 <span class="brand-name">EduTechies</span>
             </a>
             
-            <nav class="main-nav glass-panel">
+            <nav class="main-nav glass-panel" aria-label="Main navigation">
                 <ul>
-                    <li><a aria-current="page" href="index_en.php">Home</a></li>
-                    <li><a href="jobs_en.php">Careers</a></li>
-                    <li><a href="apply_en.php">Apply</a></li>
-                    <li><a href="about_en.php">About our team</a></li>
+                    <li><a href="index_en.php" <?php echo ($active_page == 'home') ? 'aria-current="page"' : ''; ?>>Home</a></li>
+                    <li><a href="jobs_en.php" <?php echo ($active_page == 'careers') ? 'aria-current="page"' : ''; ?>>Careers</a></li>
+                    <li><a href="apply_en.php" <?php echo ($active_page == 'apply') ? 'aria-current="page"' : ''; ?>>Apply</a></li>
+                    <li><a href="about_en.php" <?php echo ($active_page == 'about') ? 'aria-current="page"' : ''; ?>>About our team</a></li>
                 </ul>
             </nav>
             
