@@ -47,8 +47,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Signup - EduTechies</title>
 
     <link rel="stylesheet" href="./styles/styles.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f4f8; margin: 0; }
+        .auth-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 360px; }
+        .auth-card h2 { text-align: center; color: #1e3a8a; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #333; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .btn-submit { width: 100%; padding: 10px; background: #1e3a8a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .btn-submit:hover { background: #1d4ed8; }
+        .error { color: #dc3545; background: #f8d7da; padding: 8px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; text-align: center; }
+        .success { color: #28a745; background: #d4edda; padding: 8px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; text-align: center; }
+        .link-text { text-align: center; margin-top: 15px; font-size: 14px; }
+    </style>
 </head>
-<body class="signup-page">
+<body>
     <div class="auth-card">
         <h2>Account Signup</h2>
         
