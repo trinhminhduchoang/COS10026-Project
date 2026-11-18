@@ -7,7 +7,12 @@ if (!isset($_SESSION['user_id'])) {
 $active_page = 'apply';
 include 'header_vi.inc';
 ?>
-
+  <main id="main" class="page-main">
+    <header class="page-intro glass-panel">
+      <p class="eyebrow">Gia nhập đội ngũ</p>
+      <h1>Hãy chia sẻ đôi điều về bạn.</h1>
+       <p>Điền các mục bắt buộc và nhập mã tham chiếu công việc từ <a href="jobs_vi.php">các vị trí đang tuyển</a>. Bạn có thể chọn tất cả kỹ năng phù hợp.</p>
+    </header>
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" enctype="multipart/form-data">
       <fieldset class="form-section glass-panel">
         <legend>Vị trí ứng tuyển và thông tin liên hệ</legend>

@@ -7,7 +7,12 @@ if (!isset($_SESSION['user_id'])) {
 $active_page = 'apply';
 include 'header_en.inc';
 ?>
-
+  <main id="main" class="page-main">
+    <header class="page-intro glass-panel">
+      <p class="eyebrow">Join the team</p>
+      <h1>Tell us a little about yourself.</h1>
+       <p>Complete the required fields and enter a valid reference from our <a href="jobs_en.php">current opportunities</a>. You can select any skills that apply.</p>
+    </header>
     <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" style="margin-top: 20px;">
       
       <fieldset class="form-section glass-panel">
