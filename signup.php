@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+require_once("settings.php");
 session_start();
 
 $error = "";
@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 1. Kiểm tra không để trống
     if (empty($user) || empty($email) || empty($pass)) {
-        $error = "Vui lòng điền đầy đủ thông tin!";
+        $error = "Please fill in the information";
     } 
     // 2. Kiểm tra điều kiện tên đăng nhập (3-16 ký tự, không chứa khoảng trắng hoặc ký tự đặc biệt)
     elseif (!preg_match('/^[a-zA-Z0-9]{3,16}$/', $user)) {
-        $error = "Tên đăng nhập phải từ 3-16 ký tự và không được chứa khoảng trắng hoặc ký tự đặc biệt!";
+        $error = "Usernames must be between 3 and 16 characters and must not contain spaces or special characters!";
     } 
     else {
         // Kiểm tra xem tên đăng nhập hoặc email đã tồn tại chưa

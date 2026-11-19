@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+require_once("settings.php");
 session_start();
 
 $error = "";
