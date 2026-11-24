@@ -2,13 +2,12 @@
 session_start();
 require_once "settings.php";
 
-// Chặn truy cập trực tiếp bằng GET
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: apply_en.php");
     exit();
 }
 
-// 1. Lấy dữ liệu đúng theo thuộc tính 'name' trong apply_en.php
+
 $jobReference  = isset($_POST['jobReference']) ? strtoupper(trim($_POST['jobReference'])) : '';
 $firstName     = isset($_POST['firstName']) ? trim($_POST['firstName']) : '';
 $lastName      = isset($_POST['lastName']) ? trim($_POST['lastName']) : '';
@@ -22,11 +21,11 @@ $email         = isset($_POST['email']) ? trim($_POST['email']) : '';
 $phone         = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 $otherSkills   = isset($_POST['otherSkills']) ? trim($_POST['otherSkills']) : '';
 
-// Gom mảng checkbox skills[] thành chuỗi
+
 $skillsArr = (isset($_POST['skills']) && is_array($_POST['skills'])) ? $_POST['skills'] : [];
 $skillsStr = implode(", ", array_map('trim', $skillsArr));
 
-// 2. Server-side Validation khớp với các luật trên form
+
 $errors = [];
 $validStates = ['VIC', 'NSW', 'QLD', 'NT', 'WA', 'SA', 'TAS', 'ACT'];
 
@@ -74,7 +73,7 @@ if (!preg_match('/^[0-9]{8,12}$/', $phone)) {
     $errors[] = "Phone number must be 8 to 12 digits with no spaces.";
 }
 
-// 3. Xử lý upload CV (tùy chọn)
+
 $cvPath = null;
 if (isset($_FILES['cv']) && $_FILES['cv']['error'] !== UPLOAD_ERR_NO_FILE) {
     if ($_FILES['cv']['error'] === UPLOAD_ERR_OK) {
@@ -100,7 +99,7 @@ if (isset($_FILES['cv']) && $_FILES['cv']['error'] !== UPLOAD_ERR_NO_FILE) {
     }
 }
 
-// Nếu có lỗi -> báo lỗi và dừng lại
+
 if (!empty($errors)) {
     echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Application Error</title></head><body style='font-family: Arial, sans-serif; padding: 30px;'>";
     echo "<h2>Please fix the following errors:</h2><ul>";
@@ -111,7 +110,7 @@ if (!empty($errors)) {
     exit();
 }
 
-// 4. Lưu vào bảng eoi
+
 $sql = "INSERT INTO eoi (
             job_reference, first_name, last_name, dob, gender,
             street, suburb, state, postcode, email, phone,
