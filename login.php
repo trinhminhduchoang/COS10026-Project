@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="auth-card">
-        <h2>Login</h2>
+        <h2>Account Login</h2>
         
         <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
         
