@@ -1,5 +1,6 @@
 ﻿<?php
 session_start();
+require_once 'security.php';
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
@@ -12,15 +13,16 @@ include 'header_en.inc';
     <header class="page-intro glass-panel">
         <p class="eyebrow">Join the team</p>
         <h1>Tell us a little about yourself.</h1>
-        <p>Complete the required fields and enter a valid reference from our <a href="jobs_en.php">current opportunities</a>. You can select any skills that apply.</p>
+        <p>Complete the required fields and enter the five-character job code shown on our <a href="jobs_en.php">Careers page</a>. Select any skills that apply.</p>
     </header>
 
     <form class="application-form" action="process_eoi.php" method="post" enctype="multipart/form-data" style="margin: 20px auto;">
+        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
         <fieldset class="form-section glass-panel">
             <legend>Role and contact details</legend>
             <div class="form-grid">
                 <div class="form-field reference-field">
-                    <input class="form-input" id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Enter exactly five letters or numbers." maxlength="5" autocomplete="off" placeholder=" " required>
+                    <input class="form-input" id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Enter the five-letter-or-number job code shown on the Careers page." maxlength="5" autocomplete="off" placeholder=" " required>
                     <label class="form-label" for="job-reference">
                         <span class="form-label-char" style="--index: 0">J</span>
                         <span class="form-label-char" style="--index: 1">o</span>
@@ -36,7 +38,7 @@ include 'header_en.inc';
                         <span class="form-label-char" style="--index: 11">c</span>
                         <span class="form-label-char" style="--index: 12">e</span>
                     </label>
-                    <small>Enter 5 letters, e.g. ED105</small>
+                    <small>Enter 5 letters or numbers, e.g. ED105</small>
                 </div>
 
                 <div class="form-field">

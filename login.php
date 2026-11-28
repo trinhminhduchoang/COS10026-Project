@@ -1,36 +1,47 @@
-<?php
+2<?php
 session_start();
+require_once("security.php");
 require_once("settings.php");
 
 
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = trim($_POST['username']);
-    $pass = $_POST['password'];
-    if (empty($user) || empty($pass)) {
-        $error = "Please enter a username and password.";
+    $userInput = $_POST['username'] ?? null;
+    $pass = $_POST['password'] ?? null;
+    if (!csrf_token_is_valid($_POST['csrf_token'] ?? null)) {
+        $error = "Please refresh the page and try again.";
+    } elseif (!is_string($userInput) || !is_string($pass)) {
+        $error = "Invalid username or password.";
     } else {
-        $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $user, $user);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows == 1) {
-            $row = $result->fetch_assoc();
-            
-            if (password_verify($pass, $row['password'])) {
-                
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['username'] = $row['username'];
-                header("Location:index_en.php");
-                exit();
-            } else {
-                $error = "Invalid password. Please try again.";
-            }
+        $user = trim($userInput);
+        if ($user === '' || $pass === '' || strlen($user) > 254 || strlen($pass) > 72) {
+            $error = "Invalid username or password.";
         } else {
-            $error = "Invalid username or email. Please try again.";
+            try {
+                $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ss", $user, $user);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows === 1) {
+                    $row = $result->fetch_assoc();
+                    if (password_verify($pass, $row['password'])) {
+                        session_regenerate_id(true);
+                        $_SESSION['user_id'] = $row['id'];
+                        $_SESSION['username'] = $row['username'];
+                        header("Location: index.php");
+                        exit();
+                    }
+                }
+
+                $error = "Invalid username or password.";
+                $stmt->close();
+            } catch (mysqli_sql_exception $exception) {
+                error_log("Login database error: " . $exception->getMessage());
+                $error = "Login could not be completed. Please try again.";
+            }
         }
     }
 }
@@ -59,9 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="auth-card">
         <h2>Account Login</h2>
         
-        <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
+        <?php if (!empty($error)) echo "<div class='error'>" . htmlspecialchars($error, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . "</div>"; ?>
         
         <form action="login.php" method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
             <div class="form-group">
                 <label>Username or Email</label>
                 <input type="text" name="username" required>

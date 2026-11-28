@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("security.php");
 require_once("settings.php");
 
 
@@ -8,40 +9,52 @@ $success = "";
 
 // PHẢI CÓ ĐOẠN NÀY ĐỂ NHẬN DỮ LIỆU KHI NGƯỜI DÙNG BẤM NÚT SIGNUP
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $pass = $_POST['password'];
+    $userInput = $_POST['username'] ?? null;
+    $emailInput = $_POST['email'] ?? null;
+    $pass = $_POST['password'] ?? null;
 
-    // 1. Kiểm tra không để trống
-    if (empty($user) || empty($email) || empty($pass)) {
-        $error = "Please fill in the information";
-    } 
-    // 2. Kiểm tra điều kiện tên đăng nhập (3-16 ký tự, không chứa khoảng trắng hoặc ký tự đặc biệt)
-    elseif (!preg_match('/^[a-zA-Z0-9]{3,16}$/', $user)) {
-        $error = "Usernames must be between 3 and 16 characters and must not contain spaces or special characters!";
-    } 
-    else {
-        // Kiểm tra xem tên đăng nhập hoặc email đã tồn tại chưa
-        $sql = "SELECT id FROM users WHERE username = ? OR email = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $user, $email);
-        $stmt->execute();
-        $stmt->store_result();
+    if (!csrf_token_is_valid($_POST['csrf_token'] ?? null)) {
+        $error = "Please refresh the page and try again.";
+    } elseif (!is_string($userInput) || !is_string($emailInput) || !is_string($pass)) {
+        $error = "Please provide valid signup information.";
+    } else {
+        $user = trim($userInput);
+        $email = trim($emailInput);
 
-        if ($stmt->num_rows > 0) {
-            $error = "Username or email has already been used!";
+        if ($user === '' || $email === '' || $pass === '') {
+            $error = "Please complete all fields.";
+        } elseif (!preg_match('/^[a-zA-Z0-9]{3,16}$/', $user)) {
+        $error = "Username must be 3 to 16 letters or numbers, with no spaces.";
+        } elseif (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error = "Please enter a valid email address.";
+        } elseif (strlen($pass) < 8) {
+            $error = "Password must be at least 8 characters long.";
+        } elseif (strlen($pass) > 72) {
+            $error = "Password is too long. Please use a shorter password.";
         } else {
-            // Mã hóa mật khẩu bảo mật
-            $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+            try {
+                $sql = "SELECT id FROM users WHERE username = ? OR email = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ss", $user, $email);
+                $stmt->execute();
+                $stmt->store_result();
 
-            $insert_sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-            $insert_stmt = $conn->prepare($insert_sql);
-            $insert_stmt->bind_param("sss", $user, $email, $hashed_password);
+                if ($stmt->num_rows > 0) {
+                    $error = "That username or email address is already in use.";
+                } else {
+                    $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+                    $insertSql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+                    $insertStmt = $conn->prepare($insertSql);
+                    $insertStmt->bind_param("sss", $user, $email, $hashedPassword);
+                    $insertStmt->execute();
+                    $success = "Signed up successfully.";
+                    $insertStmt->close();
+                }
 
-            if ($insert_stmt->execute()) {
-                $success = "Signed up successfully <a href='login.php'>Login now</a>";
-            } else {
-                $error = "An error has occured, please try again.";
+                $stmt->close();
+            } catch (mysqli_sql_exception $exception) {
+                error_log("Signup database error: " . $exception->getMessage());
+                $error = "Signup could not be completed. Please try again.";
             }
         }
     }
@@ -73,13 +86,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="auth-card">
         <h2>Account Signup</h2>
         
-        <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
-        <?php if (!empty($success)) echo "<div class='success'>$success</div>"; ?>
+        <?php if (!empty($error)) echo "<div class='error'>" . htmlspecialchars($error, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . "</div>"; ?>
+        <?php if (!empty($success)) echo "<div class='success'>" . htmlspecialchars($success, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . " <a href='login.php'>Login now</a></div>"; ?>
         
         <form action="signup.php" method="POST">
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" minlength="3" maxlength="16" pattern="[a-zA-Z0-9]+" title="Usernames must be between 3 and 16 characters and must not contain spaces or special characters!" required>
+                <input type="text" name="username" minlength="3" maxlength="16" pattern="[a-zA-Z0-9]+" title="Use 3 to 16 letters or numbers, with no spaces." required>
             </div>
             <div class="form-group">
                 <label>Email</label>

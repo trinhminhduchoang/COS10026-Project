@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+require_once 'security.php';
 if (!isset($_SESSION['user_id'])) { 
     header("Location: login.php"); 
     exit(); 
@@ -11,31 +12,31 @@ include 'header_vi.inc';
     <header class="page-intro glass-panel">
       <p class="eyebrow">Gia nhập đội ngũ</p>
       <h1>Hãy chia sẻ đôi điều về bạn.</h1>
-       <p>Điền các mục bắt buộc và nhập mã tham chiếu công việc từ <a href="jobs_vi.php">các vị trí đang tuyển</a>. Bạn có thể chọn tất cả kỹ năng phù hợp.</p>
+      <p>Điền các mục bắt buộc và nhập mã công việc gồm 5 ký tự từ <a href="jobs_vi.php">các vị trí đang tuyển</a>. Bạn có thể chọn tất cả kỹ năng phù hợp.</p>
     </header>
-    <form class="application-form" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" enctype="multipart/form-data">
+    <form class="application-form" action="process_eoi.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>">
       <fieldset class="form-section glass-panel">
         <legend>Vị trí ứng tuyển và thông tin liên hệ</legend>
         <div class="form-grid">
 
           <div class="form-field reference-field">
-            <input class="form-input" id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Nhập chính xác 5 chữ cái hoặc chữ số." maxlength="5" autocomplete="off" placeholder=" " required>
+            <input class="form-input" id="job-reference" name="jobReference" type="text" pattern="[A-Za-z0-9]{5}" title="Nhập mã công việc gồm đúng 5 chữ cái hoặc chữ số." maxlength="5" autocomplete="off" placeholder=" " required>
             <label class="form-label" for="job-reference">
               <span class="form-label-char" style="--index: 0">M</span>
               <span class="form-label-char" style="--index: 1">ã</span>
               <span class="form-label-char" style="--index: 2">&nbsp;</span>
-              <span class="form-label-char" style="--index: 3">t</span>
-              <span class="form-label-char" style="--index: 4">h</span>
-              <span class="form-label-char" style="--index: 5">a</span>
-              <span class="form-label-char" style="--index: 6">m</span>
+              <span class="form-label-char" style="--index: 3">c</span>
+              <span class="form-label-char" style="--index: 4">ô</span>
+              <span class="form-label-char" style="--index: 5">n</span>
+              <span class="form-label-char" style="--index: 6">g</span>
               <span class="form-label-char" style="--index: 7">&nbsp;</span>
-              <span class="form-label-char" style="--index: 8">c</span>
-              <span class="form-label-char" style="--index: 9">h</span>
-              <span class="form-label-char" style="--index: 10">i</span>
-              <span class="form-label-char" style="--index: 11">ế</span>
-              <span class="form-label-char" style="--index: 12">u</span>
+              <span class="form-label-char" style="--index: 8">v</span>
+              <span class="form-label-char" style="--index: 9">i</span>
+              <span class="form-label-char" style="--index: 10">ệ</span>
+              <span class="form-label-char" style="--index: 11">c</span>
             </label>
-            <small>Nhập mã gồm 5 ký tự, ví dụ: ED105</small>
+            <small>Nhập 5 chữ cái hoặc chữ số, ví dụ: ED105</small>
           </div>
 
           <div class="form-field">
@@ -206,12 +207,12 @@ include 'header_vi.inc';
         <legend>Kỹ năng và kinh nghiệm</legend>
         <p class="field-hint">Chọn những kỹ năng phù hợp với bạn.</p>
         <div class="skill-grid">
-          <label for="web"><input type="checkbox" id="web" name="skills" value="web-development">Phát triển web</label>
-          <label for="access-des"><input type="checkbox" id="access-des" name="skills" value="accessible-design">Thiết kế dễ tiếp cận</label>
-          <label for="learn-des"><input type="checkbox" id="learn-des" name="skills" value="learning-design">Thiết kế học tập</label>
-          <label for="user"><input type="checkbox" id="user" name="skills" value="user-research">Nghiên cứu người dùng</label>
-          <label for="content"><input type="checkbox" id="content" name="skills" value="content-writing">Viết nội dung</label>
-          <label for="project"><input type="checkbox" id="project" name="skills" value="project-management">Quản lý dự án</label>
+          <label for="web"><input type="checkbox" id="web" name="skills[]" value="web-development">Phát triển web</label>
+          <label for="access-des"><input type="checkbox" id="access-des" name="skills[]" value="accessible-design">Thiết kế dễ tiếp cận</label>
+          <label for="learn-des"><input type="checkbox" id="learn-des" name="skills[]" value="learning-design">Thiết kế học tập</label>
+          <label for="user"><input type="checkbox" id="user" name="skills[]" value="user-research">Nghiên cứu người dùng</label>
+          <label for="content"><input type="checkbox" id="content" name="skills[]" value="content-writing">Viết nội dung</label>
+          <label for="project"><input type="checkbox" id="project" name="skills[]" value="project-management">Quản lý dự án</label>
         </div>
         <div class="form-field">
           <label for="other-skills">Kỹ năng hoặc thông tin khác (không bắt buộc)</label>
